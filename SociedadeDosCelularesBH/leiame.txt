@@ -1,0 +1,29 @@
+(1) Nome do projeto: 
+Sociedade dos Celulares BH
+
+(2) Link para o projeto: 
+https://github.com/MatheusBach-Dev/BhCelular-Web
+
+(3) Participantes:
+Tech Lead: Matheus Bach
+Dev. Front-End: Gabriel Luis, Bruno Pimenta & Arthur Leite
+Design Gráfico: André Sette
+Copywriter: Pedro Borges
+
+(4) Objetivo principal: 
+Desenvolver um aplicativo para a venda de celulares em Belo Horizonte, oferecendo aos usuários uma plataforma para visualizar produtos e comparar preços. O objetivo é conectar clientes e vendedores facilmente, proporcionando uma visão limpa e completa do mercado de dispositivo móveis em Belo Horizonte.
+
+(5) Descrição: 
+Definir com todos do grupo uma boa descrição a partir da criação de páginas.
+
+(6) Finalidade: O projeto foi desenvolvido para algum grupo social ou familiar?
+Sim ou Não? Professor considera a finalidade do projeto para empresas também?
+
+(7) Participação dos integrantes:
+Ainda não é para ser feito.
+
+(8) Aplicação do projeto: 
+Ainda não é para ser feito.
+
+(9) Conclusão: 
+Ainda não é para ser feito. 
