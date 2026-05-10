@@ -1,0 +1,28 @@
+(1) Nome do projeto: 
+Sociedade dos Celulares BH
+
+(2) Link para o projeto: 
+https://github.com/MatheusBach-Dev/BhCelular-Web
+
+(3) Participantes:
+Tech Lead: Matheus Bach
+Dev. Front-End: Gabriel Luis, Bruno Pimenta & Arthur Leite
+Design Gráfico: André Sette
+Copywriter: Pedro Borges
+
+(4) Objetivo principal: 
+Desenvolver um site para a visualização do catálogo da loja BH Celular, oferecendo aos usuários uma plataforma prática para visualizar produtos, consultar informações e comparar preços dos produtos. O projeto busca conectar clientes e vendedores de forma simples e eficiente, proporcionando uma navegação limpa, organizada e acessível.
+
+(5) Descrição: 
+O projeto consiste no desenvolvimento de um site catálogo para a BH Celular, com o objetivo de divulgar celulares e facilitar a visualização de produtos e preços pelos clientes. A plataforma será organizada de forma simples e intuitiva, permitindo acesso rápido às informações dos aparelhos disponíveis na loja. O site contará com páginas de catálogo, tabela de produtos, formulário de contato, localização da empresa e uma página sobre os integrantes do grupo, além de integração com WhatsApp para facilitar a comunicação entre clientes e vendedores. O desenvolvimento do projeto busca aplicar conhecimentos adquiridos na disciplina utilizando HTML, CSS e JavaScript, incluindo funcionalidades interativas, como um simulador de parcelamento para auxiliar os usuários na visualização de valores de pagamento. A proposta principal é criar uma vitrine digital moderna e acessível para a loja, melhorando sua presença online e oferecendo uma experiência mais prática aos clientes interessados nos produtos da BH Celular.
+
+(6) Finalidade: Sim. O projeto foi desenvolvido com finalidade empresarial, visando auxiliar a loja BH Celular na divulgação de produtos e na melhoria da comunicação com os clientes através de uma plataforma digital moderna e acessível. O site tem como objetivo facilitar a visualização do catálogo de celulares, melhorar a experiência dos usuários e fortalecer a presença online da empresa no mercado de Belo Horizonte.
+
+(7) Participação dos integrantes:
+Ainda não é para ser feito.
+
+(8) Aplicação do projeto: 
+Ainda não é para ser feito.
+
+(9) Conclusão: 
+Ainda não é para ser feito. 
