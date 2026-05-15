@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    background: transparent;
+    font-family: 'inter', sans-serif;
+}
+
+.header.rolando {
+    background: #111;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 20px;
+}

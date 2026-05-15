@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BH Celular</title>
+    <link rel="stylesheet" href="styles/header.css">
 </head>
+
 <body>
+
+    <div id="header-container"></div>
+
+    <script>
+        fetch("pages/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+
+                const script = document.createElement("script");
+                script.src = "js/header.js";
+                document.body.appendChild(script);
+            });
+    </script>
     
+    <div style="height: 2000px;"></div>
+
     <footer>
         <p>
             Projeto acadêmico desenvolvido como proposta de presença digital para a loja BH Celular. Este site não possui vínculo oficial com a empresa.
-            dawdadadwadadada
         </p>
     </footer>
 </body>
+
 </html>
