@@ -1,10 +1,11 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .header {
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 40px;
@@ -18,7 +19,7 @@
     z-index: 1000;
 }
 
-.rolando {
+.header.rolando {
     background: #111;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }

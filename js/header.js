@@ -2,13 +2,12 @@ const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container");
 
 function atualizarHeader() {
-    const usuarioRolou = window.scrollY > 0;
+    const usuarioRolou = window.scrollY > 50;
 
-    if(usuarioRolou){
+    if (usuarioRolou) {
         header.classList.add("fixed");
         header.classList.add("rolando");
 
-    
         headerContainer.style.height = `${header.offsetHeight}px`;
     } else {
         header.classList.remove("fixed");
