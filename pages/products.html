@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../BhCelular-project/styles/products.css">
+    <link rel="stylesheet" href="/styles/products.css">
+    <link rel="stylesheet" href="/styles/header.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
@@ -22,7 +22,7 @@
     <div id="header-container"></div>
 
     <script>
-        fetch("./header.html")
+        fetch("/pages/header.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
@@ -33,39 +33,47 @@
     </script>
 
     <h1 id="tittle">Produtos</h1>
-    <p id="subTittle">Confira nossa seleção de smartphones, acessórios e serviços com garantia e procedência.</p>
+        <p id="subtittle">Confira nossa seleção de smartphones, acessórios e serviços com garantia e procedência.</p>
+    
 
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="category-list">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="smartphones">Smartphones</button>
+                <button class="category-btn" data-category="accessories">Acessórios</button>
+            </div>
 
-
-
-    <aside class="sidebar">
-
-        <div class="products-container">
-
-            <aside class="sidebar">
-                <div class="category-list">
-                    <button class="category-btn active" data-category="all">Todos</button>
-                    <button class="category-btn" data-category="smartphones">Smartphones</button>
-                    <button class="category-btn" data-category="accessories">Acessórios</button>
-                    <button class="category-btn" data-category="assistance">Assistência</button>
+            <div class="price-filter">
+                <h3>Faixa de preço</h3>
+                <input type="range" id="price-range" min="0" max="10000" step="100" value="10000">
+                <div class="price-values">
+                    <span>R$ 0</span>
+                    <span id="price-display">R$ 10.000</span>
                 </div>
+            </div>
+        </aside>
 
-                <div class="price-filter">
-                    <h3>Faixa de preço</h3>
-                    <input type="range" id="price-range" min="0" max="10000" step="100" value="10000">
-                    <div class="price-values">
-                        <span>R$ 0</span>
-                        <span id="price-display">R$ 10.000</span>
-                    </div>
-                </div>
-            </aside>
-
-            <main class="product-content" id="product-list">
+        <main class="product-content" id="product-list">
             </main>
 
-        </div>
+    </div>
 
-        <script src="../BhCelular-project/js/products.js"></script>
+    <div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <div class="modal-image"></div>
+        <div class="modal-info">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <div id="modal-price" class="product-price"></div>
+            <a id="modal-buy-btn" class="buy-btn" target="_blank">Comprar</a>
+        </div>
+    </div>
+</div>
+
+        <script src="/js/products.js"></script>
 </body>
 
 </html>
