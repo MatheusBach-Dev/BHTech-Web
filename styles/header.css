@@ -5,7 +5,6 @@
 }
 
 .header {
-    position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 40px;
@@ -15,15 +14,25 @@
     transition: 0.3s ease;
     background: transparent;
     font-family: 'inter', sans-serif;
+    border-bottom: 2px solid var(--cor-cinza-claro);
+    z-index: 1000;
 }
 
-.header.rolando {
+.rolando {
     background: #111;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.fixed {
+    position: fixed;
 }
 
 .header a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 20px;
+}
+
+.logo {
+    color: #fff;
 }

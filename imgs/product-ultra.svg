@@ -1,0 +1,32 @@
+<svg width="360" height="280" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a" x1="88" y1="35" x2="222" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#444A53"/>
+      <stop offset="1" stop-color="#121416"/>
+    </linearGradient>
+    <linearGradient id="b" x1="190" y1="80" x2="270" y2="215" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6E7684"/>
+      <stop offset=".48" stop-color="#242932"/>
+      <stop offset=".52" stop-color="#F3BD16"/>
+      <stop offset="1" stop-color="#0B0D0E"/>
+    </linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#000" flood-opacity=".5"/>
+    </filter>
+  </defs>
+  <rect width="360" height="280" fill="#1A1D20"/>
+  <ellipse cx="188" cy="222" rx="120" ry="24" fill="#050607" opacity=".58"/>
+  <g filter="url(#s)" transform="rotate(4 139 139)">
+    <rect x="86" y="38" width="122" height="204" rx="23" fill="url(#a)" stroke="#69717A" stroke-width="3"/>
+    <rect x="103" y="57" width="55" height="58" rx="16" fill="#0B0D0E" stroke="#7A828C" stroke-width="3"/>
+    <circle cx="124" cy="79" r="12" fill="#060708" stroke="#8E96A0" stroke-width="4"/>
+    <circle cx="144" cy="79" r="9" fill="#060708" stroke="#8E96A0" stroke-width="3"/>
+    <circle cx="128" cy="100" r="9" fill="#060708" stroke="#8E96A0" stroke-width="3"/>
+    <circle cx="146" cy="100" r="4" fill="#F3BD16"/>
+  </g>
+  <g filter="url(#s)" transform="rotate(8 230 139)">
+    <rect x="172" y="45" width="126" height="200" rx="23" fill="#0A0C0E" stroke="#737B84" stroke-width="3"/>
+    <rect x="186" y="61" width="98" height="168" rx="17" fill="url(#b)"/>
+    <path d="M195 229c23-73 52-120 84-152v152h-84Z" fill="#080A0B" opacity=".34"/>
+  </g>
+</svg>
