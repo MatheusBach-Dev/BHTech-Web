@@ -1,11 +1,23 @@
 const header = document.getElementById("header");
+const headerContainer = document.getElementById("header-container");
 
-window.addEventListener("scroll", () => {
+function atualizarHeader() {
+    const usuarioRolou = window.scrollY > 50;
 
-    if(window.scrollY > 50){
+    if (usuarioRolou) {
+        header.classList.add("fixed");
         header.classList.add("rolando");
-    } else {
-        header.classList.remove("rolando");
-    }
 
-});
+        headerContainer.style.height = `${header.offsetHeight}px`;
+    } else {
+        header.classList.remove("fixed");
+        header.classList.remove("rolando");
+
+        headerContainer.style.height = "";
+    }
+}
+
+window.addEventListener("scroll", atualizarHeader);
+window.addEventListener("resize", atualizarHeader);
+
+atualizarHeader();
