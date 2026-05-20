@@ -7,6 +7,7 @@ function atualizarHeader() {
     if(usuarioRolou){
         header.classList.add("fixed");
         header.classList.add("rolando");
+
     
         headerContainer.style.height = `${header.offsetHeight}px`;
     } else {
