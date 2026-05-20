@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../styles/header.css">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <script>
+        fetch("./header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "../js/header.js";
+                document.body.appendChild(script);
+            });
+    </script>
+
+    <div style="height: 2000px;"></div>
+</body>
+
+</html>
