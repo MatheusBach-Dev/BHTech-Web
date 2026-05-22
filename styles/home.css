@@ -167,7 +167,7 @@ svg {
     background:
         linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.88) 32%, rgba(0, 0, 0, 0.22) 58%, rgba(0, 0, 0, 0.08) 100%),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.88) 100%),
-        url("../imgs/fundo-home.png") center right / cover no-repeat;
+        url("../images/fundo-home.png") center right / cover no-repeat;
 }
 
 .main-container::before {
@@ -745,7 +745,7 @@ footer p {
         background:
             linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.8) 48%, rgba(0, 0, 0, 0.24) 100%),
             linear-gradient(180deg, rgba(0, 0, 0, 0.1) 48%, rgba(0, 0, 0, 0.92) 100%),
-            url("../imgs/fundo-home.png") 65% center / cover no-repeat;
+            url("../images/fundo-home.png") 65% center / cover no-repeat;
     }
 
     .main-uptitle {
