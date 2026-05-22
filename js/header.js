@@ -8,12 +8,10 @@ function atualizarHeader() {
         header.classList.add("fixed");
         header.classList.add("rolando");
 
-        headerContainer.style.height = `${header.offsetHeight}px`;
     } else {
         header.classList.remove("fixed");
         header.classList.remove("rolando");
 
-        headerContainer.style.height = "";
     }
 }
 
