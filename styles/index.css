@@ -1,3 +1,8 @@
 body{
-    background-color: var(--cor-cinza-escuro)
+    background-color: var(--cor-cinza-escuro);
+    font-family: 'Inter' sans-serif;
+}
+
+p{
+    color: white;
 }
