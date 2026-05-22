@@ -5,6 +5,7 @@
 }
 
 .header {
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 40px;
@@ -13,14 +14,14 @@
     align-items: center;
     transition: 0.3s ease;
     background: transparent;
-    font-family: 'inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     border-bottom: 2px solid var(--cor-cinza-claro);
     z-index: 1000;
 }
 
-.rolando {
-    background: #111;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+.header.rolando {
+    background-color: var(--cor-preta);
+    border-bottom: 2px solid var(--cor-cinza-claro);
 }
 
 .fixed {
@@ -34,5 +35,5 @@
 }
 
 .logo {
-    color: #fff;
+    color: var(--cor-cinza-branco);
 }
