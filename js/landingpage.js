@@ -8,7 +8,7 @@ const featuredProducts = [
         priceLabel: "R$ 4.999",
         installment: "12x sem juros",
         badge: "Mais vendido",
-        image: "../imgs/product-pro-max-real.png",
+        image: "../images/product-pro-max-real.png",
         alt: "Smartphone escuro com conjunto de câmeras e tela roxa.",
         link: "#destaques"
     },
@@ -21,7 +21,7 @@ const featuredProducts = [
         priceLabel: "R$ 6.499",
         installment: "10x sem juros",
         badge: "Performance",
-        image: "../imgs/product-ultra-real.png",
+        image: "../images/product-ultra-real.png",
         alt: "Smartphone grafite com tela escura e detalhe amarelo.",
         link: "#destaques"
     },
@@ -34,7 +34,7 @@ const featuredProducts = [
         priceLabel: "R$ 499",
         installment: "6x sem juros",
         badge: "Áudio premium",
-        image: "../imgs/product-earbuds-real.png",
+        image: "../images/product-earbuds-real.png",
         alt: "Fones sem fio pretos com estojo aberto.",
         link: "#destaques"
     },
@@ -47,7 +47,7 @@ const featuredProducts = [
         priceLabel: "R$ 129",
         installment: "3x sem juros",
         badge: "Carga rápida",
-        image: "../imgs/product-charger-real.png",
+        image: "../images/product-charger-real.png",
         alt: "Carregador branco compacto com cabo.",
         link: "#destaques"
     },
@@ -60,7 +60,7 @@ const featuredProducts = [
         priceLabel: "R$ 79",
         installment: "à vista",
         badge: "Proteção",
-        image: "../imgs/product-case-real.png",
+        image: "../images/product-case-real.png",
         alt: "Capa escura para smartphone com bordas reforçadas.",
         link: "#destaques"
     }

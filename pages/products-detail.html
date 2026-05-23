@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - BH Celular</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/products-detail.css">
+    <link rel="stylesheet" href="/styles/header.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <script>
+        fetch("/pages/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "/js/header.js";
+                document.body.appendChild(script);
+            });
+    </script>
+
+    <main class="detail-container">
+        <div class="breadcrumb">
+            <a href="/pages/products.html">Produtos</a>
+            <span class="breadcrumb-separator">›</span>
+            <span id="breadcrumb-product">Carregando...</span>
+        </div>
+
+        <div class="product-detail-card">
+            <div class="product-image-section">
+                <div class="product-image-wrapper">
+                    <div class="product-image-icon" id="product-icon"></div>
+                </div>
+            </div>
+
+            <div class="product-info-section">
+                <div class="product-category-badge" id="product-category"></div>
+                <h1 class="product-name" id="product-name"></h1>
+                <div class="product-price" id="product-price"></div>
+
+                <div class="product-description-section">
+                    <h3>Descrição</h3>
+                    <p id="product-desc"></p>
+                </div>
+
+                <div class="product-features">
+                    <h3>Características</h3>
+                    <ul id="product-features"></ul>
+                </div>
+
+                <div class="product-actions">
+                    <a id="buy-button" class="buy-btn" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Comprar via WhatsApp
+                    </a>
+                    <a href="/pages/products.html" class="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        Voltar aos Produtos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="recommendations-section">
+            <div class="recommendations-header">
+                <h2>Você também pode gostar</h2>
+                <p>Outros produtos que podem te interessar:</p>
+            </div>
+            <div id="recommended-products" class="recommended-grid"></div>
+        </section>
+    </main>
+
+    <script src="/js/products.js"></script>
+</body>
+
+</html>
