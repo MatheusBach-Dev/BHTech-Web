@@ -19,9 +19,8 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
                 const script = document.createElement("script");
-                script.src = "js/header.js";
+                script.src = "../js/header.js";
                 document.body.appendChild(script);
             });
     </script>
