@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/landingpage.css">
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/global.css">
     <title>LandingPage</title>
 </head>
@@ -94,6 +95,13 @@
     </section>
 
     
+    <div id="footer-container"></div>
+    <script>
+        fetch("/pages/footer.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("footer-container").innerHTML = data);
+    </script>
+
     <script src="../js/landingpage.js" defer></script>
 </body>
 </html>
