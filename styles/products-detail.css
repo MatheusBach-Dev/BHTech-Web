@@ -188,6 +188,40 @@ a svg {
     margin-top: 10px;
 }
 
+.add-to-cart-row {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Botão voltar menor */
+.add-to-cart-row .back-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+/* Garantir mesmo tamanho do "Comprar via WhatsApp" */
+.add-to-cart-row #add-to-cart-btn {
+    width: fit-content;
+    padding: 16px 24px;
+    font-size: 16px;
+    box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
+}
+
+/* evitar estilos do .buy-btn afetarem o layout do volta */
+.add-to-cart-row .buy-btn {
+    width: fit-content;
+}
+
+
+@media (max-width: 600px) {
+    .add-to-cart-row {
+        margin-bottom: 16px;
+    }
+}
+
+
 .buy-btn {
     display: flex;
     align-items: center;
@@ -205,6 +239,20 @@ a svg {
     box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
 }
 
+/* WhatsApp: verde */
+#buy-button-bottom.buy-btn,
+#buy-button.buy-btn {
+    background: linear-gradient(145deg, #23D366, #1FBF5B 48%, #0E8F3A);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(35, 211, 102, 0.25);
+}
+
+#buy-button-bottom.buy-btn:hover,
+#buy-button.buy-btn:hover {
+    background: linear-gradient(145deg, #3FE07F, #23D366 48%, #1FBF5B);
+    box-shadow: 0 8px 24px rgba(35, 211, 102, 0.4);
+}
+
 .buy-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(252, 191, 7, 0.4);
@@ -218,7 +266,7 @@ a svg {
 .back-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     background-color: transparent;
     color: #FFFCF8;
@@ -229,6 +277,7 @@ a svg {
     font-size: 15px;
     border: 1px solid #323332;
     transition: all 0.2s ease;
+    width: fit-content;
 }
 
 .back-btn:hover {
@@ -422,3 +471,4 @@ a svg {
         grid-template-columns: 1fr;
     }
 }
+
