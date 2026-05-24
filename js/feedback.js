@@ -40,7 +40,7 @@ if (feedbackForm && formStatus) {
             return;
         }
 
-        formStatus.textContent = `Obrigado, ${name}. Seu feedback foi registrado para a equipe BH Celular.`;
+        formStatus.textContent = `Obrigado, ${name}. Seu feedback foi registrado e enviado para a equipe BH Celular.`;
         formStatus.classList.add("is-success");
         feedbackForm.reset();
         setRating(5);
