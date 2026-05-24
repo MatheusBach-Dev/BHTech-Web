@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location</title>
-    <link rel="stylesheet" href="../styles/location.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
     <script src="../js/location.js" defer></script>
 </head>
 
@@ -19,9 +20,8 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
                 const script = document.createElement("script");
-                script.src = "js/header.js";
+                script.src = "../js/header.js";
                 document.body.appendChild(script);
             });
     </script>
@@ -102,6 +102,12 @@
         <figure><img src="../images/store2.png" alt="Loja Física 2"></figure>
         <figure><img src="../images/store3.png" alt="Loja Física 3"></figure>
     </section>
+    <div id="footer-container"></div>
+    <script>
+        fetch("/pages/footer.html")
+            .then(r => r.text())
+            .then(data => document.getElementById("footer-container").innerHTML = data);
+    </script>
 
 </body>
 
