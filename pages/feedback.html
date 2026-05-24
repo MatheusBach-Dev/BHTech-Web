@@ -216,7 +216,7 @@
                         </svg>
                         Enviar feedback
                     </button>
-                    <p class="form-status" role="status" aria-live="polite"></p>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                 </div>
             </form>
         </section>
@@ -233,8 +233,9 @@
                 document.body.appendChild(headerScript);
             });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/js/feedback.js"></script>
-
 </body>
 
 </html>
