@@ -127,10 +127,11 @@
 
 .footer-bottom {
     border-top: 1px solid color-mix(in srgb, var(--cor-cinza-claro) 40%, transparent);
-    text-align: center;
+    justify-content: center;
     padding: 20px;
     font-size: 0.82rem;
     color: var(--cor-cinza-branco);
+    display: flex;
 }
 
 
