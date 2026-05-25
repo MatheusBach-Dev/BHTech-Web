@@ -1,4 +1,69 @@
 body{
-    background-color: var(--cor-cinza-escuro);
+    background-color: var(--cor-preta);
     height: 1800px;
+    color: white;
 }
+
+#banner {
+    padding: 20px;
+    text-align: left;
+    padding-top: 100px;
+
+}
+
+#banner p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#banner h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+#history {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px;
+}
+
+#history figure{
+    width: 100%;
+    flex: 1;
+}
+
+#history div{
+    flex: 1;
+}
+
+#history div h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#history div p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#history figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px){
+
+    #history{
+        flex-direction: column;
+    }
+
+    #history figure,
+    #history div{
+        width: 100%;
+    }
+
+}   
