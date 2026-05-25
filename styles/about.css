@@ -27,6 +27,7 @@ body{
     flex-direction: row;
     gap: 40px;
     padding: 20px;
+    align-items: flex-start;
 }
 
 #history figure{
@@ -35,7 +36,7 @@ body{
 }
 
 #history div{
-    flex: 1;
+    flex: 1.3;
 }
 
 #history div h2{
@@ -51,7 +52,7 @@ body{
 #history figure img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -99,6 +100,42 @@ body{
 .card p{
     color: #bdbdbd;
     line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+#numbers{
+    padding: 20px;
+}
+
+#numbers h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+.number-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.number-card{
+    background-color: #111;
+    border: 1px solid #f5b400;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.number-card h3{
+    font-size: 2.2rem;
+    color: #f5b400;
+    margin-bottom: 10px;
+}
+
+.number-card p{
+    color: #d0d0d0;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px){
