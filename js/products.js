@@ -170,7 +170,7 @@ if (isDetailPage) {
 
 
             const encodedMessage = encodeURIComponent(
-            `
+            ` 
             Olá! 
 
             Vi o produto *${product.name}* no site da BH Celular e tenho interesse em realizar a compra.

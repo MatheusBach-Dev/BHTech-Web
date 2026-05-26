@@ -159,7 +159,7 @@ svg {
 
 .main-container {
     position: relative;
-    min-height: calc(100vh);
+    min-height: 105vh;
     isolation: isolate;
     display: flex;
     align-items: flex-start;
@@ -317,8 +317,7 @@ svg {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    max-width: 1668px;
-    margin: -184px auto 0;
+    width: 100vw;
     padding: 0 clamp(24px, 7.05vw, 136px) 74px;
 }
 
@@ -395,6 +394,8 @@ svg {
         linear-gradient(180deg, #030303 0%, #0B0B0B 48%, #030303 100%);
     padding: 108px clamp(24px, 7vw, 136px);
 }
+
+
 
 .landing-preview::before {
     content: "";
@@ -486,10 +487,10 @@ footer p {
     .main-container {
         padding: 138px clamp(96px, 6.9vw, 136px) 220px;
         background-position: center, center, right center;
-        background-size: auto, auto, min(94vw, 1900px) auto;
     }
 
     .main-content {
+        margin-top: 4rem;
         width: min(700px, 100%);
     }
 
@@ -536,9 +537,7 @@ footer p {
     }
 
     .section-experiences {
-        max-width: 1540px;
         margin-top: -172px;
-        padding: 0 clamp(96px, 6.9vw, 136px) 64px;
     }
 
     .section-card {
@@ -679,17 +678,23 @@ footer p {
 
     .main-container {
         padding-top: 104px;
+        min-height: 120vh;
         background-position: 58% center;
     }
 
     .main-content {
+        margin-top: 4rem;
         max-width: 640px;
     }
 
     .section-experiences {
         grid-template-columns: 1fr;
-        max-width: 720px;
-        margin-top: -144px;
+        background: linear-gradient(180deg, #030303 0%, #0B0B0B 48%, #030303 100%);
+        grid-template-columns: minmax(0, 900px);
+        justify-content: center;
+        align-content: center;
+        padding:
+            clamp(48px, 8vh, 96px) clamp(24px, 7vw, 136px);
         gap: 24px;
     }
 
@@ -712,6 +717,11 @@ footer p {
 @media (max-width: 720px) {
     :root {
         --header-height: 82px;
+    }
+
+    .main-content {
+        margin-top: 6rem;
+        max-width: 640px;
     }
 
     .site-header {
@@ -740,7 +750,7 @@ footer p {
     }
 
     .main-container {
-        min-height: 700px;
+        min-height: 100vh;
         padding: 72px 22px 72px;
         background:
             linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.8) 48%, rgba(0, 0, 0, 0.24) 100%),
