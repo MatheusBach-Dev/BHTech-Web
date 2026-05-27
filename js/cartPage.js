@@ -135,7 +135,7 @@ function normalizeCart(data) {
             category: String(item.category ?? "produto").trim(),
             id: item.id ?? item.productId ?? item.sku ?? createFallbackId(),
             image: normalizeImageSource(item.image ?? item.imageUrl ?? item.image_url ?? item.thumbnail ?? item.photo ?? item.picture),
-            name: String(item.name ?? item.title ?? "Produto BH Celular").trim(),
+            name: String(item.name ?? item.title ?? "Produto BH Tech").trim(),
             price: Number(item.price ?? item.unitPrice ?? 0),
             quantity: Math.max(1, Number(item.quantity ?? item.qty ?? 1))
         }))
@@ -698,9 +698,9 @@ function createOrderText() {
         dateStyle: "short",
         timeStyle: "short"
     });
-    const subject = `Pedido ${orderId} - BH Celular`;
+    const subject = `Pedido ${orderId} - BH Tech`;
     const body = [
-        "Olá, equipe BH Celular.",
+        "Olá, equipe BH Tech.",
         "",
         "Tenho interesse em finalizar este pedido pelo site:",
         "",
@@ -747,7 +747,7 @@ function createOrderText() {
 
 function createWhatsAppMessage(order) {
     return [
-        "Olá, BH Celular! Quero finalizar este pedido pelo site.",
+        "Olá, BH Tech! Quero finalizar este pedido pelo site.",
         "",
         `*Pedido:* ${order.orderId}`,
         `*Data do envio:* ${order.createdAt}`,
@@ -818,7 +818,7 @@ async function finishOrder() {
     const order = createOrderText();
 
     setFinishButtonLoading(true);
-    setCheckoutStatus("Enviando pedido para a equipe BH Celular...", "");
+    setCheckoutStatus("Enviando pedido para a equipe BH Tech...", "");
 
     try {
         const emailResult = await sendOrderWithEmailJs(order);
@@ -828,7 +828,7 @@ async function finishOrder() {
             status: emailResult.status,
             text: emailResult.text
         });
-        setCheckoutStatus(`Pedido ${order.orderId} enviado para a BH Celular. A equipe fará a confirmação da retirada.`, "is-success");
+        setCheckoutStatus(`Pedido ${order.orderId} enviado para a BH Tech. A equipe fará a confirmação da retirada.`, "is-success");
     } catch (error) {
         setCheckoutStatus(getEmailJsErrorMessage(error), "is-error");
     } finally {
@@ -849,7 +849,7 @@ async function sendOrderByWhatsApp() {
         status: "opened",
         text: "WhatsApp aberto com resumo do pedido"
     });
-    setCheckoutStatus("Abrimos o WhatsApp com o pedido preenchido. Revise e envie para a BH Celular.", "is-success");
+    setCheckoutStatus("Abrimos o WhatsApp com o pedido preenchido. Revise e envie para a BH Tech.", "is-success");
     window.open(createWhatsAppUrl(order), "_blank", "noopener,noreferrer");
 }
 
