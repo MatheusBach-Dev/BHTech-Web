@@ -1,32 +1,49 @@
-const STORE_EMAIL = "lgs239495@gmail.com";
-const CART_FALLBACK_KEY = "bhcelularCart";
+const DEFAULT_PRODUCT_IMAGE = "/images/product-fallback-ai.png";
+const CLIENT_CONFIG_ENDPOINT = "/api/config/client";
+const STORE_EMAIL="lgs239495@gmail.com"
+const CART_FALLBACK_KEY="bh_cart"
+const CART_STORAGE_KEYS=['bh_cart','bhcelularCart','bhCelularCart','bh-celular-cart','cart','carrinho','cartItems','shoppingCart'];
+const EMAILJS_PUBLIC_KEY='n-Rb-rryzLQR-2vwQ';
+const EMAILJS_SERVICE_ID='service_7f3g7px';
+const EMAILJS_TEMPLATE_ID='template_m3t7u0e';
+const EMAILJS_RECEIVER_EMAIL='lgs239495@gmail.com';
+const WHATSAPP_ORDER_TO='5531996626094';
 
-const EMAILJS_CONFIG = {
-    blockHeadless: true,
-    limitRate: {
-        id: "bh-celular-checkout",
-        throttle: 10000
-    },
-    publicKey: "n-Rb-rryzLQR-2vwQ",
-    receiverEmail: STORE_EMAIL,
-    serviceId: "service_7f3g7px",
-    templateId: "template_m3t7u0e"
-};
 
-const CART_KEYS = [
-    "bhcelularCart",
-    "bhCelularCart",
-    "bh-celular-cart",
-    "bh_cart",
-    "cart",
-    "carrinho",
-    "cartItems",
-    "shoppingCart"
-];
+const BRAZILIAN_DDDS = new Set([
+    "11", "12", "13", "14", "15", "16", "17", "18", "19",
+    "21", "22", "24", "27", "28",
+    "31", "32", "33", "34", "35", "37", "38",
+    "41", "42", "43", "44", "45", "46", "47", "48", "49",
+    "51", "53", "54", "55",
+    "61", "62", "63", "64", "65", "66", "67", "68", "69",
+    "71", "73", "74", "75", "77", "79",
+    "81", "82", "83", "84", "85", "86", "87", "88", "89",
+    "91", "92", "93", "94", "95", "96", "97", "98", "99"
+]);
 
 const COUPONS = {
     BHCELULAR10: { label: "10% de desconto aplicado.", type: "percent", value: 0.1 },
     PRIMEIRA50: { label: "R$ 50,00 de desconto aplicado.", type: "fixed", value: 50 }
+};
+
+const cartConfig = {
+    cartFallbackKey: CART_FALLBACK_KEY,
+    cartKeys: CART_STORAGE_KEYS,
+    emailjs: {
+        blockHeadless: true,
+        limitRate: {
+            id: "bh-celular-checkout",
+            throttle: 10000
+        },
+        publicKey: EMAILJS_PUBLIC_KEY,
+        receiverEmail: EMAILJS_RECEIVER_EMAIL,
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID
+    },
+    productFallbackImage: "",
+    storeEmail: STORE_EMAIL,
+    whatsappNumber: WHATSAPP_ORDER_TO
 };
 
 const cartState = {
@@ -48,9 +65,12 @@ const cartElements = {
     discount: document.querySelector("#discount-value"),
     emptyCart: document.querySelector("#empty-cart"),
     finishButton: document.querySelector("#finish-order"),
+    phoneInput: document.querySelector("input[name='customerPhone']"),
+    phoneMessage: document.querySelector("#phone-validation-message"),
     pickupDate: document.querySelector("input[name='pickupDate']"),
     pickupPeriod: document.querySelector("select[name='pickupPeriod']"),
     pickupSummary: document.querySelector("#shipping-value"),
+    whatsappButton: document.querySelector("#send-whatsapp"),
     subtotal: document.querySelector("#subtotal-value"),
     total: document.querySelector("#total-value")
 };
@@ -66,12 +86,39 @@ function getStorage() {
     }
 }
 
+function getCartFallbackKey() {
+    return cartConfig.cartFallbackKey;
+}
+
+function getCartKeys() {
+    const keys = cartConfig.cartKeys.length ? cartConfig.cartKeys : [getCartFallbackKey()].filter(Boolean);
+    return [...new Set(keys)];
+}
+
 function createFallbackId() {
     if (window.crypto?.randomUUID) {
         return window.crypto.randomUUID();
     }
 
     return `item-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function normalizeImageSource(value) {
+    const image = String(value || "").trim();
+    return image || "";
+}
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getProductImage(item) {
+    return normalizeImageSource(item.image) || cartConfig.productFallbackImage;
 }
 
 function normalizeCart(data) {
@@ -87,6 +134,7 @@ function normalizeCart(data) {
         .map(item => ({
             category: String(item.category ?? "produto").trim(),
             id: item.id ?? item.productId ?? item.sku ?? createFallbackId(),
+            image: normalizeImageSource(item.image ?? item.imageUrl ?? item.image_url ?? item.thumbnail ?? item.photo ?? item.picture),
             name: String(item.name ?? item.title ?? "Produto BH Celular").trim(),
             price: Number(item.price ?? item.unitPrice ?? 0),
             quantity: Math.max(1, Number(item.quantity ?? item.qty ?? 1))
@@ -103,7 +151,7 @@ function parseCartValue(value) {
 }
 
 function findCartByKnownKeys(storage) {
-    for (const key of CART_KEYS) {
+    for (const key of getCartKeys()) {
         const storedValue = storage.getItem(key);
         const items = storedValue ? parseCartValue(storedValue) : [];
 
@@ -138,12 +186,12 @@ function loadCartFromStorage() {
     const storage = getStorage();
 
     if (!storage) {
-        cartState.cartKey = CART_FALLBACK_KEY;
+        cartState.cartKey = getCartFallbackKey();
         return [];
     }
 
     const cart = findCartByKnownKeys(storage) || findCartByShape(storage);
-    cartState.cartKey = cart?.key || CART_FALLBACK_KEY;
+    cartState.cartKey = cart?.key || getCartFallbackKey();
     return cart?.items || [];
 }
 
@@ -154,10 +202,10 @@ function saveCartToStorage() {
         return;
     }
 
-    storage.setItem(cartState.cartKey || CART_FALLBACK_KEY, JSON.stringify(cartState.items));
+    storage.setItem(cartState.cartKey || getCartFallbackKey(), JSON.stringify(cartState.items));
 }
 
-function saveLastOrder(order, emailResult) {
+function saveLastOrder(order, contactResult = {}) {
     const storage = getStorage();
 
     if (!storage) {
@@ -166,12 +214,13 @@ function saveLastOrder(order, emailResult) {
 
     storage.setItem("bhcelularLastOrder", JSON.stringify({
         createdAt: new Date().toISOString(),
-        customer: order.checkoutData,
-        email: {
-            receiver: EMAILJS_CONFIG.receiverEmail,
-            status: emailResult?.status || null,
-            text: emailResult?.text || null
+        contact: {
+            channel: contactResult.channel || "email",
+            receiver: contactResult.receiver || cartConfig.emailjs.receiverEmail,
+            status: contactResult.status || null,
+            text: contactResult.text || null
         },
+        customer: order.checkoutData,
         id: order.orderId,
         items: cartState.items,
         totals: order.totals
@@ -279,15 +328,21 @@ function updateSummary() {
  * Mantém a estrutura visual separada dos cálculos e eventos.
  */
 function createCartItemTemplate(item) {
+    const imageSource = getProductImage(item);
+    const itemName = escapeHtml(item.name);
+    const itemCategory = escapeHtml(categoryLabel(item.category));
+
     return `
-        <div class="item-visual">${itemIcon(item.category)}</div>
+        <div class="item-visual">
+            <img class="item-image" src="${escapeHtml(imageSource)}" alt="Imagem de ${itemName}">
+        </div>
         <div class="item-info">
-            <h3>${item.name}</h3>
-            <span class="item-category">${categoryLabel(item.category)}</span>
+            <h3>${itemName}</h3>
+            <span class="item-category">${itemCategory}</span>
             <p class="item-price">${formatCurrency(item.price)} cada</p>
         </div>
         <div class="item-actions">
-            <div class="qty-control" aria-label="Quantidade de ${item.name}">
+            <div class="qty-control" aria-label="Quantidade de ${itemName}">
                 <button type="button" data-action="decrease" aria-label="Diminuir quantidade">-</button>
                 <span>${item.quantity}</span>
                 <button type="button" data-action="increase" aria-label="Aumentar quantidade">+</button>
@@ -308,6 +363,17 @@ function renderCartItem(item) {
     cartElements.cartItems.appendChild(article);
 }
 
+function handleCartImageError(event) {
+    const image = event.target.closest(".item-image");
+
+    if (!image || image.dataset.fallbackApplied === "true") {
+        return;
+    }
+
+    image.dataset.fallbackApplied = "true";
+    image.src = DEFAULT_PRODUCT_IMAGE;
+}
+
 function renderCart() {
     cartElements.cartItems.innerHTML = "";
     cartElements.emptyCart.hidden = cartState.items.length > 0;
@@ -325,6 +391,95 @@ function setCouponMessage(message, type = "") {
     cartElements.couponMessage.className = `coupon-message ${type}`.trim();
 }
 
+function setFieldMessage(element, message, type = "") {
+    if (!element) {
+        return;
+    }
+
+    element.textContent = message;
+    element.className = `field-hint ${type}`.trim();
+}
+
+function getOnlyDigits(value) {
+    return String(value || "").replace(/\D/g, "");
+}
+
+function getBrazilianWhatsappDigits(value) {
+    const digits = getOnlyDigits(value);
+    const withoutCountryCode = digits.startsWith("55") && digits.length > 11
+        ? digits.slice(2)
+        : digits;
+
+    return withoutCountryCode.slice(0, 11);
+}
+
+function formatWhatsappNumber(value) {
+    const digits = getBrazilianWhatsappDigits(value);
+
+    if (!digits) {
+        return "";
+    }
+
+    if (digits.length <= 2) {
+        return `(${digits}`;
+    }
+
+    const ddd = digits.slice(0, 2);
+    const number = digits.slice(2);
+
+    if (number.length <= 5) {
+        return `(${ddd}) ${number}`;
+    }
+
+    const prefixLength = digits.length > 10 ? 5 : 4;
+    return `(${ddd}) ${number.slice(0, prefixLength)}-${number.slice(prefixLength)}`;
+}
+
+function isRepeatedDigits(value) {
+    return /^(\d)\1+$/.test(value);
+}
+
+function validateWhatsappNumber(value) {
+    const digits = getBrazilianWhatsappDigits(value);
+    const ddd = digits.slice(0, 2);
+    const number = digits.slice(2);
+
+    if (!digits) {
+        return { message: "Informe seu WhatsApp para a loja confirmar o pedido.", valid: false };
+    }
+
+    if (digits.length !== 11) {
+        return { message: "Informe DDD + celular com 9 dígitos.", valid: false };
+    }
+
+    if (!BRAZILIAN_DDDS.has(ddd)) {
+        return { message: "Confira o DDD informado.", valid: false };
+    }
+
+    if (!number.startsWith("9")) {
+        return { message: "Informe um celular brasileiro válido começando com 9.", valid: false };
+    }
+
+    if (isRepeatedDigits(digits) || isRepeatedDigits(number)) {
+        return { message: "Confira o número de WhatsApp informado.", valid: false };
+    }
+
+    return { message: "WhatsApp com formato válido.", valid: true };
+}
+
+function applyWhatsappMask() {
+    cartElements.phoneInput.value = formatWhatsappNumber(cartElements.phoneInput.value);
+    cartElements.phoneInput.setCustomValidity("");
+    setFieldMessage(cartElements.phoneMessage, "Digite DDD + celular, por exemplo: (31) 99999-9999.");
+}
+
+function validateWhatsappField() {
+    const result = validateWhatsappNumber(cartElements.phoneInput.value);
+    cartElements.phoneInput.setCustomValidity(result.valid ? "" : result.message);
+    setFieldMessage(cartElements.phoneMessage, result.message, result.valid ? "is-success" : "is-error");
+    return result.valid;
+}
+
 function isEmailConfigPlaceholder(value) {
     const normalizedValue = String(value || "").trim().toUpperCase();
     return !normalizedValue || normalizedValue.startsWith("SEU_") || normalizedValue.startsWith("YOUR_");
@@ -332,10 +487,10 @@ function isEmailConfigPlaceholder(value) {
 
 function getMissingEmailConfigFields() {
     return [
-        ["publicKey", EMAILJS_CONFIG.publicKey],
-        ["templateId", EMAILJS_CONFIG.templateId],
-        ["receiverEmail", EMAILJS_CONFIG.receiverEmail],
-        ["serviceId", EMAILJS_CONFIG.serviceId]
+        ["publicKey", cartConfig.emailjs.publicKey],
+        ["templateId", cartConfig.emailjs.templateId],
+        ["receiverEmail", cartConfig.emailjs.receiverEmail],
+        ["serviceId", cartConfig.emailjs.serviceId]
     ]
         .filter(([, value]) => isEmailConfigPlaceholder(value))
         .map(([field]) => field);
@@ -360,9 +515,9 @@ function initializeEmailJs() {
 
     if (!cartState.emailjsInitialized) {
         emailjsClient.init({
-            blockHeadless: EMAILJS_CONFIG.blockHeadless,
-            limitRate: EMAILJS_CONFIG.limitRate,
-            publicKey: EMAILJS_CONFIG.publicKey
+            blockHeadless: cartConfig.emailjs.blockHeadless,
+            limitRate: cartConfig.emailjs.limitRate,
+            publicKey: cartConfig.emailjs.publicKey
         });
         cartState.emailjsInitialized = true;
     }
@@ -499,16 +654,16 @@ function createItemsJson() {
 
 function createOrderTemplateParams(order) {
     return {
-        cart_key: cartState.cartKey || CART_FALLBACK_KEY,
+        cart_key: cartState.cartKey || getCartFallbackKey(),
         coupon_code: cartState.activeCoupon?.code || "Nenhum",
         coupon_description: cartState.activeCoupon?.label || "Nenhum desconto aplicado",
-        customer_email: order.checkoutData.customerEmail,
+        customer_email: order.checkoutData.customerEmail || "Não informado",
         customer_name: order.checkoutData.customerName,
         customer_note: order.checkoutData.customerNote || "Nenhuma",
         customer_phone: order.checkoutData.customerPhone,
         discount: formatCurrency(order.totals.discount),
         discount_raw: order.totals.discount.toFixed(2),
-        from_email: order.checkoutData.customerEmail,
+        from_email: order.checkoutData.customerEmail || "Não informado",
         from_name: order.checkoutData.customerName,
         item_count: String(getItemCount()),
         order_body: order.body,
@@ -524,10 +679,10 @@ function createOrderTemplateParams(order) {
         product_count: String(cartState.items.length),
         reply_to: order.checkoutData.customerEmail,
         source_page: window.location.href,
-        store_email: EMAILJS_CONFIG.receiverEmail,
+        store_email: cartConfig.emailjs.receiverEmail,
         subtotal: formatCurrency(order.totals.subtotal),
         subtotal_raw: order.totals.subtotal.toFixed(2),
-        to_email: EMAILJS_CONFIG.receiverEmail,
+        to_email: cartConfig.emailjs.receiverEmail,
         total: formatCurrency(order.totals.total),
         total_raw: order.totals.total.toFixed(2)
     };
@@ -552,7 +707,7 @@ function createOrderText() {
         `Pedido: ${orderId}`,
         `Data do envio: ${createdAt}`,
         `Cliente: ${checkoutData.customerName}`,
-        `E-mail: ${checkoutData.customerEmail}`,
+        `E-mail: ${checkoutData.customerEmail || "Não informado"}`,
         `WhatsApp: ${checkoutData.customerPhone}`,
         "Retirada: Na loja",
         `Dia desejado para retirada: ${pickupDate}`,
@@ -590,9 +745,49 @@ function createOrderText() {
     };
 }
 
-function validateCheckout() {
+function createWhatsAppMessage(order) {
+    return [
+        "Olá, BH Celular! Quero finalizar este pedido pelo site.",
+        "",
+        `*Pedido:* ${order.orderId}`,
+        `*Data do envio:* ${order.createdAt}`,
+        `*Cliente:* ${order.checkoutData.customerName}`,
+        `*E-mail:* ${order.checkoutData.customerEmail || "Não informado"}`,
+        `*WhatsApp:* ${order.checkoutData.customerPhone}`,
+        "",
+        "*Retirada na loja*",
+        `Dia desejado: ${order.pickupDate}`,
+        `Período: ${order.checkoutData.pickupPeriod || "Não informado"}`,
+        `Observação: ${order.checkoutData.customerNote || "Nenhuma"}`,
+        `Pagamento preferido: ${order.checkoutData.payment}`,
+        `Cupom: ${cartState.activeCoupon?.code || "Nenhum"}`,
+        "",
+        "*Produtos*",
+        order.itemLines,
+        "",
+        `Subtotal: ${formatCurrency(order.totals.subtotal)}`,
+        `Desconto: ${formatCurrency(order.totals.discount)}`,
+        `Total estimado: ${formatCurrency(order.totals.total)}`,
+        "",
+        "Aguardo confirmação de disponibilidade e da retirada."
+    ].join("\n");
+}
+
+function createWhatsAppUrl(order) {
+    return `https://wa.me/${cartConfig.whatsappNumber}?text=${encodeURIComponent(createWhatsAppMessage(order))}`;
+}
+
+async function validateCheckout() {
     if (!cartState.items.length) {
         setCheckoutStatus("Adicione produtos ao carrinho antes de finalizar.", "is-error");
+        return false;
+    }
+
+    const isWhatsappValid = validateWhatsappField();
+
+    if (!isWhatsappValid) {
+        cartElements.checkoutForm.reportValidity();
+        setCheckoutStatus("Revise o WhatsApp antes de continuar.", "is-error");
         return false;
     }
 
@@ -609,14 +804,14 @@ async function sendOrderWithEmailJs(order) {
     const emailjsClient = initializeEmailJs();
 
     return emailjsClient.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
+        cartConfig.emailjs.serviceId,
+        cartConfig.emailjs.templateId,
         order.templateParams
     );
 }
 
 async function finishOrder() {
-    if (!validateCheckout()) {
+    if (!await validateCheckout()) {
         return;
     }
 
@@ -627,7 +822,12 @@ async function finishOrder() {
 
     try {
         const emailResult = await sendOrderWithEmailJs(order);
-        saveLastOrder(order, emailResult);
+        saveLastOrder(order, {
+            channel: "email",
+            receiver: cartConfig.emailjs.receiverEmail,
+            status: emailResult.status,
+            text: emailResult.text
+        });
         setCheckoutStatus(`Pedido ${order.orderId} enviado para a BH Celular. A equipe fará a confirmação da retirada.`, "is-success");
     } catch (error) {
         setCheckoutStatus(getEmailJsErrorMessage(error), "is-error");
@@ -636,8 +836,25 @@ async function finishOrder() {
     }
 }
 
+async function sendOrderByWhatsApp() {
+    if (!await validateCheckout()) {
+        return;
+    }
+
+    const order = createOrderText();
+
+    saveLastOrder(order, {
+        channel: "whatsapp",
+        receiver: cartConfig.whatsappNumber,
+        status: "opened",
+        text: "WhatsApp aberto com resumo do pedido"
+    });
+    setCheckoutStatus("Abrimos o WhatsApp com o pedido preenchido. Revise e envie para a BH Celular.", "is-success");
+    window.open(createWhatsAppUrl(order), "_blank", "noopener,noreferrer");
+}
+
 async function copyOrder() {
-    if (!validateCheckout()) {
+    if (!await validateCheckout()) {
         return;
     }
 
@@ -658,6 +875,18 @@ function handleCouponKeydown(event) {
     }
 }
 
+function handlePhoneInput() {
+    applyWhatsappMask();
+
+    if (getBrazilianWhatsappDigits(cartElements.phoneInput.value).length === 11) {
+        validateWhatsappField();
+    }
+}
+
+function handlePhoneBlur() {
+    validateWhatsappField();
+}
+
 function setMinimumPickupDate() {
     if (cartElements.pickupDate) {
         cartElements.pickupDate.min = new Date().toISOString().slice(0, 10);
@@ -666,15 +895,21 @@ function setMinimumPickupDate() {
 
 function bindCartEvents() {
     cartElements.cartItems.addEventListener("click", handleCartAction);
+    cartElements.cartItems.addEventListener("error", handleCartImageError, true);
     cartElements.couponButton.addEventListener("click", applyCoupon);
     cartElements.couponInput.addEventListener("keydown", handleCouponKeydown);
     cartElements.finishButton.addEventListener("click", finishOrder);
+    cartElements.phoneInput.addEventListener("blur", handlePhoneBlur);
+    cartElements.phoneInput.addEventListener("change", handlePhoneBlur);
+    cartElements.phoneInput.addEventListener("input", handlePhoneInput);
+    cartElements.whatsappButton.addEventListener("click", sendOrderByWhatsApp);
     cartElements.copyButton.addEventListener("click", copyOrder);
 }
 
-function initCartPage() {
+async function initCartPage() {
     cartState.items = loadCartFromStorage();
     setMinimumPickupDate();
+    applyWhatsappMask();
     bindCartEvents();
     renderCart();
 }
