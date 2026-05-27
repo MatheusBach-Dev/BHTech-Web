@@ -138,6 +138,61 @@ body{
     font-size: 1.2rem;
 }
 
+#team{
+    padding: 20px;
+}
+
+#team h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.team-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.team-card{
+    background-color: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.team-card:hover{
+    transform: translateY(-5px);
+    border-color: #f5b400;
+}
+
+.team-card img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.team-card p{
+    color: #bdbdbd;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px){
+
+    .team-cards{
+        grid-template-columns: 1fr;
+    }
+
+}
+
 @media (max-width: 768px){
 
     #history{
@@ -149,4 +204,4 @@ body{
         width: 100%;
     }
 
-}   
+}
