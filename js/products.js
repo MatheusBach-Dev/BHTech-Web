@@ -206,7 +206,7 @@ if (isDetailPage) {
 
             document.title = `${product.name} - BH Tech`;
 
-            // Botões no layout (WhatsApp e Carrinho)
+
             const addToCartBtnTop = document.getElementById('add-to-cart-btn');
             if (addToCartBtnTop) {
                 addToCartBtnTop.addEventListener('click', () => {
@@ -220,6 +220,19 @@ if (isDetailPage) {
                 addToCartBtnBottom.addEventListener('click', () => {
                     if (!window.BHCart || typeof window.BHCart.addToCart !== 'function') return;
                     window.BHCart.addToCart(product, 1);
+
+                    const toast = document.getElementById('bh-cart-toast');
+                    if (!toast) return;
+
+                    toast.innerHTML = `<span class="bh-cart-toast-check">✓</span>Adicionado ao carrinho`;
+                    toast.hidden = false;
+                    toast.classList.add('is-visible');
+
+                    window.clearTimeout(window.__bhCartToastTimeout);
+                    window.__bhCartToastTimeout = window.setTimeout(() => {
+                        toast.classList.remove('is-visible');
+                        toast.hidden = true;
+                    }, 2400);
                 });
             }
         } else {
