@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/products.css">
+
     <title>LandingPage</title>
 </head>
 <body>
@@ -24,29 +26,32 @@
             });
     </script>
 
-    <main class="main-container">
-        <section class="hero-content" aria-labelledby="hero-title">
-            <p class="main-container-top">BH CELULAR · SMARTPHONES E ASSISTÊNCIA PREMIUM</p>
-            <h1 id="hero-title" class="main-container-title">Celulares, acessórios e suporte técnico profissional.</h1>
-            <p class="main-container-description">Uma loja pensada para quem quer comprar, consertar, proteger e receber o celular com rapidez. Tudo em um só lugar, com curadoria, garantia e transparência.</p>
-            <div class="main-container-buttons">
-                <a class="main-container-catalog-button" href="catalog.html">
+    <main class="landing-main-container">
+        <section class="landing-hero-content" aria-labelledby="hero-title">
+
+            <p class="landing-main-container-top">BH CELULAR · SMARTPHONES E ASSISTÊNCIA PREMIUM</p>
+            <h1 id="hero-title" class="landing-main-container-title">Celulares, acessórios e suporte técnico profissional.</h1>
+            <p class="landing-main-container-description">Uma loja pensada para quem quer comprar, consertar, proteger e receber o celular com rapidez. Tudo em um só lugar, com curadoria, garantia e transparência.</p>
+            <div class="landing-main-container-buttons">
+                <a class="landing-main-container-catalog-button" href="catalog.html">
                     <img src="../images/icon-bag.svg" class="button-icon" alt="">
                     Ver catálogo
                 </a>
-                <a class="main-container-whats-button" href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20BH%20Celular" target="_blank" rel="noreferrer">
+                <a class="landing-main-container-whats-button" href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20BH%20Celular" target="_blank" rel="noreferrer">
                     <img class="button-icon" src="../images/icon-whatsapp.svg" alt="">
                     Falar com a loja
                 </a>
             </div>
         </section>
 
-        <figure class="hero-visual" aria-label="Celulares e acessórios premium">
+        <figure class="landing-hero-visual" aria-label="Celulares e acessórios premium">
+
             <img src="../images/hero-realistic.png" alt="Smartphones, acessórios e ferramentas técnicas em uma mesa escura">
         </figure>
     </main>
 
     <section class="section-benefits" aria-labelledby="benefits-title">
+
         <h2 id="benefits-title" class="section-benefits-title">O que nossa loja tem a oferecer?</h2>
         <div class="section-benefits-container">
             <article class="section-benefits-item">
@@ -81,10 +86,11 @@
     </section>
 
     <section id="destaques" class="section-highlights" aria-labelledby="highlights-title">
+
         <div class="section-highlights-header">
             <div>
                 <p class="section-kicker">Produtos selecionados</p>
-                <h2 id="highlights-title" class="section-highlights-title">Destaques</h2>
+                <h2 id="highlights-title" class="section-highlights-title">Destaques:</h2>
             </div>
             <a class="section-highlights-description" href="products.html" aria-label="Ver todos os produtos">
                 Ver todos os produtos
@@ -102,6 +108,7 @@
             .then(data => document.getElementById("footer-container").innerHTML = data);
     </script>
 
+    <script src="../js/products.js" defer></script>
     <script src="../js/landingpage.js" defer></script>
 </body>
 </html>

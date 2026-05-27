@@ -178,8 +178,12 @@ if (isDetailPage) {
 
             Obrigado!`);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            document.getElementById('buy-button').setAttribute('href', whatsappUrl);
 
+            const buyButtonTop = document.getElementById('buy-button');
+            if (buyButtonTop) buyButtonTop.setAttribute('href', whatsappUrl);
+
+            const buyButtonBottom = document.getElementById('buy-button-bottom');
+            if (buyButtonBottom) buyButtonBottom.setAttribute('href', whatsappUrl);
 
             const recommendedProducts = document.getElementById('recommended-products');
             if (recommendedProducts) {
@@ -201,6 +205,23 @@ if (isDetailPage) {
             }
 
             document.title = `${product.name} - BH Celular`;
+
+            // Botões no layout (WhatsApp e Carrinho)
+            const addToCartBtnTop = document.getElementById('add-to-cart-btn');
+            if (addToCartBtnTop) {
+                addToCartBtnTop.addEventListener('click', () => {
+                    if (!window.BHCart || typeof window.BHCart.addToCart !== 'function') return;
+                    window.BHCart.addToCart(product, 1);
+                });
+            }
+
+            const addToCartBtnBottom = document.getElementById('add-to-cart-btn-bottom');
+            if (addToCartBtnBottom) {
+                addToCartBtnBottom.addEventListener('click', () => {
+                    if (!window.BHCart || typeof window.BHCart.addToCart !== 'function') return;
+                    window.BHCart.addToCart(product, 1);
+                });
+            }
         } else {
             document.querySelector('.detail-container').innerHTML = `
                 <div class="empty-state" style="grid-column: 1/-1; text-align: center; padding: 60px;">
