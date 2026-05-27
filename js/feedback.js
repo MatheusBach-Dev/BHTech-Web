@@ -58,7 +58,7 @@ if (feedbackForm && formStatus) {
         };
         try {
             await emailjs.send("service_7f3g7px", "template_d5v69zu", data);
-            formStatus.textContent = `Obrigado, ${name}. Seu feedback foi registrado para a equipe BH Celular.`;
+            formStatus.textContent = `Obrigado, ${name}. Seu feedback foi registrado para a equipe BH Tech.`;
             feedbackForm.reset();
             setRating(5);
         } catch(error) {
