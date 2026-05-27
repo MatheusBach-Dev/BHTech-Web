@@ -45,7 +45,7 @@
                         </div>
                         <h3>Seu carrinho está vazio</h3>
                         <p>Adicione produtos na loja para finalizar a compra por aqui.</p>
-                        <a href="/pages/landingpage.html#destaques">Ver produtos</a>
+                        <a href="/pages/products.html">Ver produtos</a>
                     </div>
                 </section>
 
@@ -62,16 +62,19 @@
                             <label>
                                 Nome completo
                                 <input type="text" name="customerName" placeholder="Seu nome" autocomplete="name" required>
+                                <small class="field-hint" aria-hidden="true"></small>
                             </label>
 
                             <label>
                                 E-mail
-                                <input type="email" name="customerEmail" placeholder="voce@email.com" autocomplete="email" required>
+                                <input type="text" name="customerEmail" placeholder="voce@email.com" autocomplete="email" inputmode="email" aria-describedby="email-validation-message">
+                                <small class="field-hint" id="email-validation-message">Opcional, usado apenas para a equipe responder o pedido.</small>
                             </label>
 
                             <label>
                                 WhatsApp
-                                <input type="tel" name="customerPhone" placeholder="(31) 99999-9999" autocomplete="tel" required>
+                                <input type="tel" name="customerPhone" placeholder="(31) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" aria-describedby="phone-validation-message" required>
+                                <small class="field-hint" id="phone-validation-message">Digite DDD + celular, por exemplo: (31) 99999-9999.</small>
                             </label>
 
                         </div>
@@ -187,6 +190,14 @@
                         Enviar pedido para BH Celular
                     </button>
 
+                    <button class="whatsapp-action" type="button" id="send-whatsapp">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.5 11.8a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.3-4.6A8.5 8.5 0 1 1 20.5 11.8Z"></path>
+                            <path d="M9.4 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.4-.1.6l-.4.5c-.1.2-.2.3-.1.5.4.8 1.1 1.6 2 2 .2.1.3.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.3.4.5 0 .6-.4 1.4-.9 1.6-.6.3-1.7.3-3.3-.5-2.8-1.4-4.6-3.8-4.8-5.2-.1-.9.3-1.6.7-1.9Z"></path>
+                        </svg>
+                        Enviar automático pelo WhatsApp
+                    </button>
+
                     <button class="secondary-action" type="button" id="copy-order">
                         Copiar resumo do pedido
                     </button>
@@ -196,6 +207,7 @@
             </aside>
         </section>
     </main>
+
 
     <div id="footer-container"></div>
     <script>
