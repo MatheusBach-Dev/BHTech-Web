@@ -1,24 +1,139 @@
 const products = [
-    { id: 1, name: "Smartphone Pro Max", desc: "256GB, câmera tripla, tela OLED.", price: 4999, category: "smartphones", features: ["256GB de armazenamento", "Câmera tripla de 48MP", "Tela OLED de 6.7 polegadas", "Bateria de 4500mAh", "Processador octa-core"] },
-    { id: 2, name: "Smartphone Ultra", desc: "512GB, alto desempenho.", price: 6499, category: "smartphones", features: ["512GB de armazenamento", "Câmera quádrupla de 64MP", "Tela Super AMOLED de 6.9 polegadas", "Bateria de 5000mAh", "Processador topo de linha"] },
-    { id: 3, name: "Fone Sem Fio Pro", desc: "Cancelamento de ruído ativo.", price: 499, category: "accessories", features: ["Cancelamento de ruído ativo (ANC)", "Bateria de até 30 horas", "Driver de 40mm", "Conexão Bluetooth 5.2", "Carregamento USB-C"] },
-    { id: 4, name: "Carregador Turbo 20W", desc: "Carregamento rápido.", price: 129, category: "accessories", features: ["Potência de 20W", "Carregamento rápido PD", "Compatível com múltiplos dispositivos", "Proteção contra sobrecarga", "Cabo USB-C incluído"] },
-    { id: 5, name: "Capa Antichoque", desc: "Proteção reforçada.", price: 79, category: "accessories", features: ["Material TPU de alta resistência", "Proteção em todas as pontas", "Suporte para cartão", "Design slim", "Disponível em várias cores"] },
-    { id: 6, name: "Película 3D Premium", desc: "Proteção de tela completa.", price: 59, category: "accessories", features: ["Cobertura 3D completa", "Vidro temperado 9H", "Revestimento oleofóbico", "Sensibilidade touchscreen", "Fácil instalação sem bolhas"] },
-    { id: 7, name: "Powerbank 10.000mAh", desc: "Bateria extra para o dia todo.", price: 199, category: "accessories", features: ["Capacidade de 10.000mAh", "Carregamento rápido bidirecional", "2 portas USB", "Indicador LED de carga", "Design compacto"] },
-    { id: 8, name: "Suporte Veicular", desc: "Fixação magnética forte.", price: 49, category: "accessories", features: ["Ímã super forte", "Rotação 360°", "Compatível com qualquer aparelho", "Fácil instalação", "Não danifica o aparelho"] },
-    { id: 9, name: "Capinha aderente", desc: "Super aderência em superfícies planas.", price: 100, category: "accessories", features: ["Material emborrachado antiderrapante", "Design ultrafino", "Proteção contra quedas", "Acesso fácil a todos os botões", "Leve e confortável"] },
-    { id: 10, name: "Fone com fio", desc: "Microfone embutido com equalização.", price: 20, category: "accessories", features: ["Driver de 14.2mm", "Microfone embutido", "Cabo de 1.2m", "Conector P2 universal", "Controle de volume"] }
+    {
+        id: 1,
+        name: "Smartphone Pro Max",
+        desc: "256GB, câmera tripla, tela OLED.",
+        price: 4999,
+        category: "smartphones",
+        image: "../products-images/smarthphone-pro.png",
+        features: ["256GB de armazenamento", "Câmera tripla de 48MP", "Tela OLED de 6.7 polegadas", "Bateria de 4500mAh", "Processador octa-core"]
+    },
+
+    {
+        id: 2,
+        name: "Smartphone Ultra",
+        desc: "512GB, alto desempenho.",
+        price: 6499,
+        category: "smartphones",
+        image: "../products-images/smarthphone-ultra.png",
+        features: ["512GB de armazenamento", "Câmera quádrupla de 64MP", "Tela Super AMOLED de 6.9 polegadas", "Bateria de 5000mAh", "Processador topo de linha"]
+    },
+
+    {
+        id: 3,
+        name: "Fone Sem Fio Pro",
+        desc: "Cancelamento de ruído ativo.",
+        price: 499,
+        category: "accessories",
+        image: "../products-images/fone-sem-fio.png",
+        features: ["Cancelamento de ruído ativo (ANC)", "Bateria de até 30 horas", "Driver de 40mm", "Conexão Bluetooth 5.2", "Carregamento USB-C"]
+    },
+
+    {
+        id: 4,
+        name: "Carregador Turbo 20W",
+        desc: "Carregamento rápido.",
+        price: 129,
+        category: "accessories",
+        image: "../products-images/carregador.png",
+        features: ["Potência de 20W", "Carregamento rápido PD", "Compatível com múltiplos dispositivos", "Proteção contra sobrecarga", "Cabo USB-C incluído"]
+    },
+
+    {
+        id: 5,
+        name: "Capa Antichoque",
+        desc: "Proteção reforçada.",
+        price: 79,
+        category: "accessories",
+        image: "../products-images/capinha-antichoque.png",
+        features: ["Material TPU de alta resistência", "Proteção em todas as pontas", "Suporte para cartão", "Design slim", "Disponível em várias cores"]
+    },
+
+    {
+        id: 6,
+        name: "Película 3D Premium",
+        desc: "Proteção de tela completa.",
+        price: 59,
+        category: "accessories",
+        image: "../products-images/pelicula.png",
+        features: ["Cobertura 3D completa", "Vidro temperado 9H", "Revestimento oleofóbico", "Sensibilidade touchscreen", "Fácil instalação sem bolhas"]
+    },
+
+    {
+        id: 7,
+        name: "Powerbank 10.000mAh",
+        desc: "Bateria extra para o dia todo.",
+        price: 199,
+        category: "accessories",
+        image: "../products-images/powerbank.png",
+        features: ["Capacidade de 10.000mAh", "Carregamento rápido bidirecional", "2 portas USB", "Indicador LED de carga", "Design compacto"]
+    },
+
+    {
+        id: 8,
+        name: "Suporte Veicular",
+        desc: "Fixação magnética forte.",
+        price: 49,
+        category: "accessories",
+        image: "../products-images/suporte-veicular.png",
+        features: ["Ímã super forte", "Rotação 360°", "Compatível com qualquer aparelho", "Fácil instalação", "Não danifica o aparelho"]
+    },
+
+    {
+        id: 9,
+        name: "Capinha aderente",
+        desc: "Super aderência em superfícies planas.",
+        price: 100,
+        category: "accessories",
+        image: "../products-images/capinha-aderente.png",
+        features: ["Material emborrachado antiderrapante", "Design ultrafino", "Proteção contra quedas", "Acesso fácil a todos os botões", "Leve e confortável"]
+    },
+
+    {
+        id: 10,
+        name: "Fone com fio",
+        desc: "Microfone embutido com equalização.",
+        price: 20,
+        category: "accessories",
+        image: "../products-images/fone-com-fio.png",
+        features: ["Driver de 14.2mm", "Microfone embutido", "Cabo de 1.2m", "Conector P2 universal", "Controle de volume"]
+    }
 ];
 
 const phoneNumber = "5531989166024";
 
 const formatCurrency = (value) => value.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
 
-const getProductIcon = (category, size = 56) => {
-    return category === 'smartphones'
-        ? `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`
-        : `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>`;
+const getProductImageSrc = (product) => {
+    const fallback = "";
+    const src = product?.image;
+
+    if (!src) return fallback;
+
+    if (src.startsWith("../products-images/")) {
+        return `/products-images/${src.replace("../products-images/", "")}`;
+    }
+    if (src.startsWith("../images/")) {
+        return `/images/${src.replace("../images/", "")}`;
+    }
+
+    const normalized = src.startsWith("http") || src.startsWith("/") ? src : `/${src}`;
+    return normalized;
+};
+
+
+
+const renderProductImage = (product, { className = "product-img", alt = product?.name || "Produto" } = {}) => {
+    const src = getProductImageSrc(product);
+    return `
+        <img
+            class="${className}"
+            src="${src}"
+            alt="${alt}"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='/images/product-fallback-ai.png';"
+        />
+    `;
 };
 
 const getCategoryLabel = (category) => {
@@ -104,7 +219,7 @@ function renderProducts() {
         card.href = `/pages/products-detail.html?id=${product.id}`;
 
         card.innerHTML = `
-            <div class="card-image">${getProductIcon(product.category)}</div>
+            <div class="card-image">${renderProductImage(product, { className: "card-product-img" })}</div>
             <div class="card-info">
                 <h4 class="card-name">${product.name}</h4>
                 <p class="card-desc">${product.desc}</p>
@@ -158,8 +273,7 @@ if (isDetailPage) {
             document.getElementById('product-price').textContent = `R$ ${formatCurrency(product.price)}`;
             document.getElementById('product-category').textContent = getCategoryLabel(product.category);
             document.getElementById('breadcrumb-product').textContent = product.name;
-            document.getElementById('product-icon').innerHTML = getProductIcon(product.category, 180);
-
+            document.getElementById('product-icon').innerHTML = renderProductImage(product, { className: "detail-product-img" });
 
             const featuresList = document.getElementById('product-features');
             if (product.features && featuresList) {
@@ -194,7 +308,7 @@ if (isDetailPage) {
 
                 recommendedProducts.innerHTML = recommendations.map(rec => `
                     <a href="/pages/products-detail.html?id=${rec.id}" class="recommended-card">
-                        <div class="rec-card-image">${getProductIcon(rec.category)}</div>
+                        <div class="rec-card-image">${renderProductImage(rec, { className: "rec-card-img" })}</div>
                         <div class="rec-card-info">
                             <h4 class="rec-card-name">${rec.name}</h4>
                             <p class="rec-card-desc">${rec.desc}</p>
