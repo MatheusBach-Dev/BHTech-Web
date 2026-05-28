@@ -84,11 +84,20 @@ a svg {
     color: #50514F;
 }
 
+.product-image-wrapper img,
+.detail-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .product-image-icon svg {
     width: 180px;
     height: 180px;
     stroke: currentColor;
 }
+
 
 .product-info-section {
     padding: 40px;
@@ -346,11 +355,23 @@ a svg {
     color: #50514F;
 }
 
+.rec-card-image img,
+.rec-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .rec-card-image svg {
+
     width: 56px;
     height: 56px;
     stroke: currentColor;
 }
+
+
+
 
 .rec-card-info {
     padding: 18px;

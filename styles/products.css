@@ -145,9 +145,18 @@ input[type=range] {
     color: #50514F;
 }
 
+.card-image img,
+.card-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .card-image svg {
     stroke: currentColor;
 }
+
 
 .card-info {
     padding: 18px;
