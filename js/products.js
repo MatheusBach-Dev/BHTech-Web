@@ -287,7 +287,7 @@ if (isDetailPage) {
             ` 
             Olá! 
 
-            Vi o produto *${product.name}* no site da BH Celular e tenho interesse em realizar a compra.
+            Vi o produto *${product.name}* no site da BH Tech e tenho interesse em realizar a compra.
             Poderia me passar mais informações sobre disponibilidade, formas de pagamento e prazo de retirada?
 
             Obrigado!`);
@@ -318,9 +318,10 @@ if (isDetailPage) {
                 `).join('');
             }
 
-            document.title = `${product.name} - BH Celular`;
+            document.title = `${product.name} - BH Tech`;
 
 
+            // Botões no layout (WhatsApp e Carrinho)
             const addToCartBtnTop = document.getElementById('add-to-cart-btn');
             if (addToCartBtnTop) {
                 addToCartBtnTop.addEventListener('click', () => {
