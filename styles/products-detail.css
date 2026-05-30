@@ -204,13 +204,11 @@ a svg {
     gap: 10px;
 }
 
-/* Botão voltar menor */
 .add-to-cart-row .back-btn {
     padding: 8px 14px;
     font-size: 13px;
 }
 
-/* Garantir mesmo tamanho do "Comprar via WhatsApp" */
 .add-to-cart-row #add-to-cart-btn {
     width: fit-content;
     padding: 16px 24px;
@@ -218,7 +216,6 @@ a svg {
     box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
 }
 
-/* evitar estilos do .buy-btn afetarem o layout do volta */
 .add-to-cart-row .buy-btn {
     width: fit-content;
 }
@@ -248,7 +245,6 @@ a svg {
     box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
 }
 
-/* WhatsApp: verde */
 #buy-button-bottom.buy-btn,
 #buy-button.buy-btn {
     background: linear-gradient(145deg, #23D366, #1FBF5B 48%, #0E8F3A);

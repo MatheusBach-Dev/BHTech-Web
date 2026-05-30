@@ -104,24 +104,13 @@ const phoneNumber = "5531989166024";
 
 const formatCurrency = (value) => value.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
 
-const getProductImageSrc = (product) => {
-    const fallback = "";
-    const src = product?.image;
-
-    if (!src) return fallback;
-
-    if (src.startsWith("../products-images/")) {
-        return `/products-images/${src.replace("../products-images/", "")}`;
-    }
-    if (src.startsWith("../images/")) {
-        return `/images/${src.replace("../images/", "")}`;
-    }
-
-    const normalized = src.startsWith("http") || src.startsWith("/") ? src : `/${src}`;
-    return normalized;
+const getProductImageSrc = (product = {}) => {
+    const src = product.image || '';
+    if (!src) return '';
+    if (src.startsWith('../products-images/')) return `/products-images/${src.slice(19)}`;
+    if (src.startsWith('../images/')) return `/images/${src.slice(10)}`;
+    return src.startsWith('http') || src.startsWith('/') ? src : `/${src}`;
 };
-
-
 
 const renderProductImage = (product, { className = "product-img", alt = product?.name || "Produto" } = {}) => {
     const src = getProductImageSrc(product);
@@ -152,6 +141,7 @@ const priceDisplaySpan = document.getElementById('price-display');
 const categoryButtons = document.querySelectorAll('.category-btn');
 const paginationNumbers = document.getElementById('pagination-numbers');
 const arrowNext = document.getElementById('arrow-next');
+const productsSearchInput = document.getElementById('products-search');
 
 const PRODUCTS_PER_PAGE = 6;
 
@@ -159,12 +149,14 @@ let activeCategory = 'all';
 let maxPrice = 10000;
 let currentPage = 1;
 let totalPages = 1;
+let searchQuery = '';
 
 function getFilteredProducts() {
     return products.filter(product => {
         const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
         const matchesPrice = product.price <= maxPrice;
-        return matchesCategory && matchesPrice;
+        const matchesSearch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesPrice && matchesSearch;
     });
 }
 
@@ -234,8 +226,16 @@ function renderProducts() {
 }
 
 if (productListContainer) {
+    if (productsSearchInput) {
+        productsSearchInput.addEventListener('input', (event) => {
+            searchQuery = event.target.value.trim();
+            currentPage = 1;
+            renderProducts();
+        });
+    }
+
     priceRangeInput.addEventListener('input', (event) => {
-        maxPrice = parseInt(event.target.value);
+        maxPrice = parseInt(event.target.value, 10);
         priceDisplaySpan.textContent = `R$ ${formatCurrency(maxPrice)}`;
         currentPage = 1;
         renderProducts();
@@ -262,7 +262,6 @@ if (productListContainer) {
 }
 
 if (isDetailPage) {
-    document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
         const product = products.find(p => p.id === productId);
@@ -320,8 +319,6 @@ if (isDetailPage) {
 
             document.title = `${product.name} - BH Tech`;
 
-
-            // Botões no layout (WhatsApp e Carrinho)
             const addToCartBtnTop = document.getElementById('add-to-cart-btn');
             if (addToCartBtnTop) {
                 addToCartBtnTop.addEventListener('click', () => {
@@ -359,5 +356,4 @@ if (isDetailPage) {
                 </div>
             `;
         }
-    });
 }

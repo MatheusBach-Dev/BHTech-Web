@@ -27,10 +27,18 @@
             });
     </script>
 
-    <section id="banner">
-        <h1>Produtos</h1>
-        <p>Confira nossa seleção de smartphones, acessórios e serviços com garantia e procedência.</p>
+    <section class="catalog-page">
+        <div class="catalog-main">
+            <section class="catalog-hero" aria-labelledby="products-title">
+                <div class="catalog-hero-inner">
+                    <div class="catalog-kicker catalog-kicker-inter">produtos</div>
+                    <h1 class="catalog-title-poppins" id="products-title">Produtos</h1>
+                    <p class="catalog-subtitle-inter">Explore nossa seleção de produtos e serviços disponíveis — encontre o que precisa com informações claras e fotos.</p>
+                </div>
+            </section>
+        </div>
     </section>
+
 
     <div class="main-container">
 
@@ -52,6 +60,12 @@
         </aside>
 
         <main class="product-content">
+            <div class="products-controls" aria-label="Controles de pesquisa">
+                <div class="search-wrap">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input id="products-search" type="text" placeholder="Pesquisar por nome..." />
+                </div>
+            </div>
             <div id="product-list" class="product-grid"></div>
 
             <div class="pagination" id="pagination">
