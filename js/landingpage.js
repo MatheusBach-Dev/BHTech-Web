@@ -19,7 +19,7 @@ function renderHighlights() {
 
             return `
                 <a class="product-card" href="/pages/products-detail.html?id=${product.id}" data-id="${product.id}">
-                    <div class="card-image">${iconHtml}</div>
+                    <div class="card-image">${(typeof renderProductImage === 'function') ? renderProductImage(product, { className: "card-product-img", alt: product?.name || "Produto" }) : iconHtml}</div>
                     <div class="card-info">
                         <h4 class="card-name">${product.name}</h4>
                         <p class="card-desc">${product.desc}</p>
