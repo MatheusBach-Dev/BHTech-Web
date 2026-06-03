@@ -68,7 +68,6 @@
                     <td class="catalog-cell catalog-img-cell">${renderImg(imgSrc, p.name)}</td>
                     <td class="catalog-cell catalog-name">${p.name}</td>
                     <td class="catalog-cell catalog-price">${price}</td>
-                    <td class="catalog-cell catalog-desc">${p.desc}</td>
                     <td class="catalog-cell catalog-qty">${qty}</td>
                 </tr>
             `;
@@ -121,16 +120,15 @@
 
         const rows = services.map((s) => {
             const price = `R$ ${formatCurrency(s.price)}`;
-            const qty = Number(s.quantity ?? 0) || 0;
+
 
             return `
                 <tr class="catalog-row">
                     <td class="catalog-cell catalog-name">${s.name}</td>
                     <td class="catalog-cell catalog-price">${price}</td>
-                    <td class="catalog-cell catalog-desc">${s.desc}</td>
-                    <td class="catalog-cell catalog-qty">${qty}</td>
                 </tr>
             `;
+
         });
 
         servicesTbody.innerHTML = rows.join('');
