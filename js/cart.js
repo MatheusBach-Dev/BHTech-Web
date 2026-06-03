@@ -1,7 +1,5 @@
 const BH_CART_DEFAULT_KEY = "bh_cart";
-
 let bhCartKey = BH_CART_DEFAULT_KEY;
-
 
 function getBHCartStorage() {
     try {
@@ -15,42 +13,27 @@ function getBHCartStorage() {
 }
 
 function normalizeBHCartImage(product) {
-    return String(
-        product.image
-        || product.imageUrl
-        || product.image_url
-        || product.thumbnail
-        || product.photo
-        || product.picture
-        || ""
-    ).trim();
+    return String(product.image || product.imageUrl || product.thumbnail || "").trim();
 }
 
 function normalizeBHCartItem(product, qty) {
     const image = normalizeBHCartImage(product);
-
     return {
-        category: product.category,
         id: product.id,
+        name: String(product.name || product.title || "").trim(),
+        price: Number(product.price || 0),
         image,
-        imageUrl: image,
-        name: product.name,
-        price: product.price,
-        quantity: qty
+        category: String(product.category || "produto").trim(),
+        quantity: Math.max(1, Number(qty || 1))
     };
 }
 
 function readBHCart() {
     const storage = getBHCartStorage();
-
-    if (!storage) {
-        return [];
-    }
-
+    if (!storage) return [];
     try {
         const raw = storage.getItem(bhCartKey);
-        const cart = raw ? JSON.parse(raw) : [];
-        return Array.isArray(cart) ? cart : [];
+        return raw ? JSON.parse(raw) : [];
     } catch {
         return [];
     }
@@ -58,37 +41,26 @@ function readBHCart() {
 
 function writeBHCart(cart) {
     const storage = getBHCartStorage();
-
-    if (!storage) {
-        return;
-    }
-
+    if (!storage) return;
     storage.setItem(bhCartKey, JSON.stringify(Array.isArray(cart) ? cart : []));
 }
 
 function addToBHCart(product, qty = 1) {
-    if (!product || product.id == null) {
-        return;
-    }
-
     const cart = readBHCart();
-    const item = cart.find(cartItem => String(cartItem.id) === String(product.id));
     const image = normalizeBHCartImage(product);
+    const existing = cart.find(i => String(i.id) === String(product.id));
 
-    if (item) {
-        item.quantity = Math.max(1, Number(item.quantity || 1)) + qty;
-
-        if (image && !item.image) {
-            item.image = image;
-            item.imageUrl = image;
-        }
+    if (existing) {
+        existing.quantity += qty;
     } else {
         cart.push(normalizeBHCartItem(product, qty));
     }
 
     writeBHCart(cart);
-}
 
+    // Dispara evento para o miniCart.js atualizar
+    window.dispatchEvent(new CustomEvent("bhCartUpdated", { detail: { product } }));
+}
 
 window.BHCart = {
     addToCart: addToBHCart,

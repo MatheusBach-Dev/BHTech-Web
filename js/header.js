@@ -27,3 +27,10 @@ function atualizarHeader() {
 window.addEventListener("scroll", atualizarHeader);
 window.addEventListener("resize", atualizarHeader);
 atualizarHeader();
+
+// Carrega o miniCart.js se ainda não foi carregado
+if (!window.BHMiniCart) {
+    const cartScript = document.createElement("script");
+    cartScript.src = "/js/miniCart.js";
+    document.body.appendChild(cartScript);
+}
