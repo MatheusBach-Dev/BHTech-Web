@@ -8,7 +8,7 @@ function getCart() {
             if (raw) {
                 const parsed = JSON.parse(raw);
                 const items = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.items) ? parsed.items : [];
-                if (items.length) return items;
+                return items;
             }
         }
     } catch {}
@@ -97,11 +97,11 @@ function renderMiniCart() {
         itemsEl.innerHTML = "";
         extraEl.hidden = true;
         footerEl.hidden = true;
-        emptyEl.style.display = "flex";
+        emptyEl.classList.add("visivel");
         return;
     }
 
-    emptyEl.style.display = "none";
+    emptyEl.classList.remove("visivel");
     footerEl.hidden = false;
 
     const visible = cart.slice(0, MINI_CART_MAX);

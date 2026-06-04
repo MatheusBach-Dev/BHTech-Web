@@ -17,13 +17,15 @@
 
     <script>
         fetch("header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
-                const script = document.createElement("script");
-                script.src = "/js/header.js";
-                document.body.appendChild(script);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
     </script>
 
@@ -122,26 +124,26 @@
 
             <div class="team-card">
                 <img src="/images/matheus.png" alt="Matheus ">
-                <h3>Matheus </h3>
-                <p>Lider da equipe</p>
+                <h3>Matheus Bach</h3>
+                <p>Tech Lead</p>
             </div>
 
             <div class="team-card">
                 <img src="/images/bruno.png" alt="Bruno Pimenta">
-                <h3>Bruno Pimenta Goulart</h3>
-                <p>Programador</p>
+                <h3>Bruno Pimenta</h3>
+                <p>Dev</p>
             </div>
 
             <div class="team-card">
                 <img src="/images/gabriel.png" alt="Gabriel Luiz">
-                <h3>Gabriel Luiz</h3>
-                <p>Programador</p>
+                <h3>Gabriel Luis</h3>
+                <p>Dev</p>
             </div>
 
             <div class="team-card">
                 <img src="/images/arthur.png" alt="Arthur da Silva ">
                 <h3>Arthur Leite</h3>
-                <p>Programador</p>
+                <p>Dev</p>
            
             </div>
 
