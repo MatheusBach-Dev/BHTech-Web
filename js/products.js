@@ -107,7 +107,7 @@ const formatCurrency = (value) => value.toLocaleString('pt-BR', { minimumFractio
 const getProductImageSrc = (product = {}) => {
     const src = product.image || '';
     if (!src) return '';
-    if (src.startsWith('../images/')) return `/images/${src.slice(19)}`;
+    if (src.startsWith('../products-images/')) return `/products-images/${src.slice(19)}`;
     if (src.startsWith('../images/')) return `/images/${src.slice(10)}`;
     return src.startsWith('http') || src.startsWith('/') ? src : `/${src}`;
 };
