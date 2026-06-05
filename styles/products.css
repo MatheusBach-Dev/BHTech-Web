@@ -188,6 +188,7 @@ input[type=range] {
     height: auto;
 }
 
+
 .card-info {
     padding: clamp(1rem, 1.5vw, 1.25rem);
     display: flex;
