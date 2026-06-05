@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="/styles/products-detail.css">
     <link rel="stylesheet" href="/styles/header.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -23,16 +20,17 @@
 
     <script>
         fetch("/pages/header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-                const script = document.createElement("script");
-                script.src = "/js/header.js";
-                document.body.appendChild(script);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js", () => loadScript("/js/products.js"))));
             });
     </script>
-
-    <div id="bh-cart-toast" class="bh-cart-toast" role="status" aria-live="polite" hidden></div>
 
     <main class="detail-container">
         <div class="breadcrumb">
@@ -103,8 +101,7 @@
         </section>
     </main>
 
-    <script src="/js/cart.js"></script>
-    <script src="/js/products.js"></script>
+
 </body>
 
 </html>

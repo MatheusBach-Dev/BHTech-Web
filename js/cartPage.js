@@ -1,13 +1,13 @@
 const DEFAULT_PRODUCT_IMAGE = "/images/product-fallback-ai.png";
 const CLIENT_CONFIG_ENDPOINT = "/api/config/client";
-const STORE_EMAIL="lgs239495@gmail.com"
+const STORE_EMAIL="matheusbachsta@gmail.com"
 const CART_FALLBACK_KEY="bh_cart"
 const CART_STORAGE_KEYS=['bh_cart','bhcelularCart','bhCelularCart','bh-celular-cart','cart','carrinho','cartItems','shoppingCart'];
 const EMAILJS_PUBLIC_KEY='n-Rb-rryzLQR-2vwQ';
 const EMAILJS_SERVICE_ID='service_7f3g7px';
 const EMAILJS_TEMPLATE_ID='template_m3t7u0e';
-const EMAILJS_RECEIVER_EMAIL='lgs239495@gmail.com';
-const WHATSAPP_ORDER_TO='5531996626094';
+const EMAILJS_RECEIVER_EMAIL='matheusbachsta@gmail.com';
+const WHATSAPP_ORDER_TO='5531989166024';
 
 
 const BRAZILIAN_DDDS = new Set([
@@ -23,7 +23,8 @@ const BRAZILIAN_DDDS = new Set([
 ]);
 
 const COUPONS = {
-    BHCELULAR10: { label: "10% de desconto aplicado.", type: "percent", value: 0.1 },
+    BHTECH10: { label: "10% de desconto aplicado.", type: "percent", value: 0.1 },
+    BHTECH60: { label: "60% de desconto aplicado.", type: "percent", value: 0.6 },
     PRIMEIRA50: { label: "R$ 50,00 de desconto aplicado.", type: "fixed", value: 50 }
 };
 

@@ -36,7 +36,7 @@ if (feedbackForm && formStatus) {
         const email = String(formData.get("email") || "").trim();
         const service = String(formData.get("service") || "").trim();
         const message = String(formData.get("message") || "").trim();
-        const recommended = formData.get("recommend") ? "Recomendaria com certeza": "Nunca recomendaria";
+        const recommended = formData.get("recommend") ? "Recomendaria com certeza": "Não recomendaria";
         const rating = Number(ratingValue.value)
         const ratingStars = "★".repeat(rating) + "☆".repeat(5 - rating);
 
