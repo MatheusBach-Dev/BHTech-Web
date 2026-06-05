@@ -105,7 +105,6 @@ a svg {
     stroke: currentColor;
 }
 
-
 .product-info-section {
     padding: clamp(1.5rem, 2.5vh, 2.5rem);
     display: flex;
@@ -370,9 +369,6 @@ a svg {
     height: auto;
     stroke: currentColor;
 }
-
-
-
 
 .rec-card-info {
     padding: clamp(1rem, 1.5vw, 1.25rem);
