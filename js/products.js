@@ -5,11 +5,7 @@ const products = [
         desc: "256GB, câmera tripla, tela OLED.",
         price: 4999,
         category: "smartphones",
-<<<<<<< HEAD
-        image: "../products-images/smarthphone-pro.png",
-=======
         image: "../images/smarthphone-pro.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["256GB de armazenamento", "Câmera tripla de 48MP", "Tela OLED de 6.7 polegadas", "Bateria de 4500mAh", "Processador octa-core"]
     },
 
@@ -19,11 +15,7 @@ const products = [
         desc: "512GB, alto desempenho.",
         price: 6499,
         category: "smartphones",
-<<<<<<< HEAD
-        image: "../products-images/smarthphone-ultra.png",
-=======
         image: "../images/smarthphone-ultra.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["512GB de armazenamento", "Câmera quádrupla de 64MP", "Tela Super AMOLED de 6.9 polegadas", "Bateria de 5000mAh", "Processador topo de linha"]
     },
 
@@ -33,11 +25,7 @@ const products = [
         desc: "Cancelamento de ruído ativo.",
         price: 499,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/fone-sem-fio.png",
-=======
         image: "../images/fone-sem-fio.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Cancelamento de ruído ativo (ANC)", "Bateria de até 30 horas", "Driver de 40mm", "Conexão Bluetooth 5.2", "Carregamento USB-C"]
     },
 
@@ -47,11 +35,7 @@ const products = [
         desc: "Carregamento rápido.",
         price: 129,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/carregador.png",
-=======
         image: "../images/carregador.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Potência de 20W", "Carregamento rápido PD", "Compatível com múltiplos dispositivos", "Proteção contra sobrecarga", "Cabo USB-C incluído"]
     },
 
@@ -61,11 +45,7 @@ const products = [
         desc: "Proteção reforçada.",
         price: 79,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/capinha-antichoque.png",
-=======
         image: "../images/capinha-antichoque.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Material TPU de alta resistência", "Proteção em todas as pontas", "Suporte para cartão", "Design slim", "Disponível em várias cores"]
     },
 
@@ -75,11 +55,7 @@ const products = [
         desc: "Proteção de tela completa.",
         price: 59,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/pelicula.png",
-=======
         image: "../images/pelicula.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Cobertura 3D completa", "Vidro temperado 9H", "Revestimento oleofóbico", "Sensibilidade touchscreen", "Fácil instalação sem bolhas"]
     },
 
@@ -89,11 +65,7 @@ const products = [
         desc: "Bateria extra para o dia todo.",
         price: 199,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/powerbank.png",
-=======
         image: "../images/powerbank.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Capacidade de 10.000mAh", "Carregamento rápido bidirecional", "2 portas USB", "Indicador LED de carga", "Design compacto"]
     },
 
@@ -103,11 +75,7 @@ const products = [
         desc: "Fixação magnética forte.",
         price: 49,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/suporte-veicular.png",
-=======
         image: "../images/suporte-veicular.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Ímã super forte", "Rotação 360°", "Compatível com qualquer aparelho", "Fácil instalação", "Não danifica o aparelho"]
     },
 
@@ -117,11 +85,7 @@ const products = [
         desc: "Super aderência em superfícies planas.",
         price: 100,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/capinha-aderente.png",
-=======
         image: "../images/capinha-aderente.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Material emborrachado antiderrapante", "Design ultrafino", "Proteção contra quedas", "Acesso fácil a todos os botões", "Leve e confortável"]
     },
 
@@ -131,11 +95,7 @@ const products = [
         desc: "Microfone embutido com equalização.",
         price: 20,
         category: "accessories",
-<<<<<<< HEAD
-        image: "../products-images/fone-com-fio.png",
-=======
         image: "../images/fone-com-fio.png",
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
         features: ["Driver de 14.2mm", "Microfone embutido", "Cabo de 1.2m", "Conector P2 universal", "Controle de volume"]
     }
 ];
@@ -144,36 +104,14 @@ const phoneNumber = "5531989166024";
 
 const formatCurrency = (value) => value.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
 
-<<<<<<< HEAD
-const getProductImageSrc = (product) => {
-    const fallback = "";
-    const src = product?.image;
-
-    if (!src) return fallback;
-
-    if (src.startsWith("../products-images/")) {
-        return `/products-images/${src.replace("../products-images/", "")}`;
-    }
-    if (src.startsWith("../images/")) {
-        return `/images/${src.replace("../images/", "")}`;
-    }
-
-    const normalized = src.startsWith("http") || src.startsWith("/") ? src : `/${src}`;
-    return normalized;
-};
-
-
-
-=======
 const getProductImageSrc = (product = {}) => {
     const src = product.image || '';
     if (!src) return '';
-    if (src.startsWith('../products-images/')) return `/products-images/${src.slice(19)}`;
+    if (src.startsWith('../images/')) return `/images/${src.slice(19)}`;
     if (src.startsWith('../images/')) return `/images/${src.slice(10)}`;
     return src.startsWith('http') || src.startsWith('/') ? src : `/${src}`;
 };
 
->>>>>>> 817ba979cbc633429f1f667d1282ceeed06bf262
 const renderProductImage = (product, { className = "product-img", alt = product?.name || "Produto" } = {}) => {
     const src = getProductImageSrc(product);
     return `
