@@ -11,43 +11,12 @@ body {
     color: #FFFCF8;
     font-family: "Poppins", sans-serif;
     margin: 0;
-    padding: 0;
 }
 
-.catalog-main { 
-    width: min(1180px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
-    margin: clamp(1.5rem, 3vh, 3rem) auto 0 auto;
-    padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
-}
-
-.catalog-hero { margin-bottom: clamp(0.75rem, 1.5vh, 1rem); }
-.catalog-hero-inner { padding-top: clamp(2rem, 5vh, 4.25rem); }
-
-.catalog-kicker { 
-    color: #FCBF07;
-    font-size: clamp(0.65rem, 1.5vw, 0.78rem);
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
-}
-.catalog-kicker-inter { font-family: 'Inter', sans-serif; }
-
-.catalog-title-poppins {
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.75rem, 4vw, 3.6rem);
-    font-weight: 740;
-    line-height: 1.05;
-    margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
-}
-
-.catalog-subtitle-inter {
-    max-width: 680px;
-    color: rgba(255, 252, 248, 0.72);
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(0.85rem, 2vw, 1rem);
-    line-height: 1.65;
+#banner {
+    padding: 120px 40px 20px;
+    text-align: left;
+    padding-left: 110px;
 }
 
 h1, h2, h3 { font-family: 'Poppins', sans-serif; }
@@ -56,9 +25,13 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
     width: min(980px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
     margin: 0 auto clamp(0.75rem, 1.5vh, 1rem) auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 clamp(0.75rem, 2vw, 1rem);
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    align-items: flex-start; 
 }
 
 .products-controls .search-wrap{
