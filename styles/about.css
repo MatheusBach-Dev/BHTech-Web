@@ -2,17 +2,25 @@ body{
     background-color: var(--cor-preta);
     height: 1800px;
     color: white;
+    font-family: var(--fonte-padrao);
 }
 
 #banner {
     padding: 20px;
     text-align: left;
     padding-top: 100px;
+}
 
+#banner .page-hero {
+    padding: 0;
+    width: 100%;
+}
+
+#subtitle{
+    font-family: var(--fonte-secundaria);
 }
 
 #banner p{
-    font-size: 1.2rem;
     font-weight: 500;
 }
 

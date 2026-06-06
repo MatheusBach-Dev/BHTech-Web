@@ -63,7 +63,6 @@ svg {
 .feedback-hero p,
 .form-copy p:last-child {
     max-width: 560px;
-    color: rgba(255, 252, 248, 0.72);
     font-family: var(--fonte-secundaria);
     font-size: 1rem;
     line-height: 1.65;

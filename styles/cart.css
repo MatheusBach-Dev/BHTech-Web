@@ -40,12 +40,14 @@ svg {
     padding: clamp(34px, 5vh, 66px) 0 78px;
 }
 
-.cart-hero {
+.cart-hero,
+.cart-main > .page-hero {
     max-width: 760px;
     margin-bottom: 28px;
 }
 
-.cart-kicker {
+.cart-kicker,
+.cart-main .page-hero-kicker {
     color: var(--cor-amarelo);
     font-family: var(--fonte-secundaria);
     font-size: 0.78rem;
@@ -56,7 +58,8 @@ svg {
     text-transform: uppercase;
 }
 
-.cart-hero h1 {
+.cart-hero h1,
+.cart-main .page-hero h1 {
     color: #fff;
     font-size: clamp(2.15rem, 3.4vw, 4.15rem);
     font-weight: 740;
@@ -65,9 +68,9 @@ svg {
     margin: 0;
 }
 
-.cart-hero p {
+.cart-hero p,
+.cart-main .page-hero p {
     max-width: 620px;
-    color: rgba(255, 252, 248, 0.7);
     font-family: var(--fonte-secundaria);
     font-size: 1rem;
     line-height: 1.7;

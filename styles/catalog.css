@@ -26,12 +26,18 @@ body {
     padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
 }
 
-.catalog-hero {
+.catalog-hero,
+.catalog-main > .page-hero {
     margin-bottom: 24px;
 }
 
 .catalog-hero-inner {
     padding-top: clamp(2rem, 5vh, 4.25rem);
+}
+
+.catalog-main > .page-hero {
+    padding-top: clamp(80px, 12vh, 120px);
+    padding-bottom: 0;
 }
 
 .catalog-kicker {

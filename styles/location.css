@@ -18,6 +18,11 @@ body {
     padding-top: 100px;
 }
 
+#banner .page-hero {
+    padding: 0;
+    width: 100%;
+}
+
 #info-map-container {
     padding: 20px;
     width: 100%;

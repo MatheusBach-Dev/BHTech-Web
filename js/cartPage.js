@@ -561,7 +561,7 @@ function applyCoupon() {
 
     if (!COUPONS[code]) {
         cartState.activeCoupon = null;
-        setCouponMessage("Cupom não encontrado. Tente BHCELULAR10 ou PRIMEIRA50.", "is-error");
+        setCouponMessage("Cupom não encontrado.", "is-error");
         updateSummary();
         return;
     }

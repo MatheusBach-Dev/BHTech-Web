@@ -19,6 +19,11 @@ body {
     padding-left: 110px;
 }
 
+#banner .page-hero {
+    padding: 0;
+    width: 100%;
+}
+
 h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 
 .products-controls{
