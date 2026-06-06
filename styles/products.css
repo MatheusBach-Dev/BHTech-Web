@@ -11,6 +11,7 @@ body {
     color: #FFFCF8;
     font-family: "Poppins", sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 #banner {
@@ -35,8 +36,34 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
     max-width: 1300px;
     margin: 0 auto;
     margin-top: 20px;
+}
 
-    align-items: flex-start; 
+.products-controls .search-wrap{
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    padding: clamp(0.65rem, 1.5vh, 0.85rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: clamp(0.75rem, 2vw, 1rem);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+}
+
+.products-controls .search-icon{
+    color: rgba(255,252,248,0.65);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    flex-shrink: 0;
+}
+
+.products-controls #products-search{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.98rem);
+    border: none;
 }
 
 .products-controls .search-wrap{
@@ -192,7 +219,6 @@ input[type=range] {
     width: clamp(2.5rem, 5vw, 3.5rem);
     height: auto;
 }
-
 
 .card-info {
     padding: clamp(1rem, 1.5vw, 1.25rem);
