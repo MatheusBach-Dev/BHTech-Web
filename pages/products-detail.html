@@ -20,17 +20,16 @@
 
     <script>
         fetch("/pages/header.html")
-            .then(r => r.text())
+            .then(response => response.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-                function loadScript(src, onload) {
-                    const s = document.createElement("script");
-                    s.src = src; if (onload) s.onload = onload;
-                    document.body.appendChild(s);
-                }
-                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js", () => loadScript("/js/products.js"))));
+                const script = document.createElement("script");
+                script.src = "/js/header.js";
+                document.body.appendChild(script);
             });
     </script>
+
+    <div id="bh-cart-toast" class="bh-cart-toast" role="status" aria-live="polite" hidden></div>
 
     <main class="detail-container">
         <div class="breadcrumb">
@@ -101,7 +100,8 @@
         </section>
     </main>
 
-
+    <script src="/js/cart.js"></script>
+    <script src="/js/products.js"></script>
 </body>
 
 </html>
