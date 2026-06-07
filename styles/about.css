@@ -1,4 +1,207 @@
 body{
-    background-color: var(--cor-cinza-escuro);
+    background-color: var(--cor-preta);
     height: 1800px;
+    color: white;
+}
+
+#banner {
+    padding: 20px;
+    text-align: left;
+    padding-top: 100px;
+
+}
+
+#banner p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#banner h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+#history {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+#history figure{
+    width: 100%;
+    flex: 1;
+}
+
+#history div{
+    flex: 1.3;
+}
+
+#history div h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#history div p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#history figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#difference{
+    padding: 20px;
+}
+
+#difference h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card{
+    background-color: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 30px 20px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    border-color: #f5b400;
+}
+
+.card img{
+    width: 60px;
+    margin-bottom: 20px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(89%) saturate(1050%) hue-rotate(359deg) brightness(103%) contrast(103%);
+    
+}
+
+.card h3{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.card p{
+    color: #bdbdbd;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+#numbers{
+    padding: 20px;
+}
+
+#numbers h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+.number-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.number-card{
+    background-color: #111;
+    border: 1px solid #f5b400;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.number-card h3{
+    font-size: 2.2rem;
+    color: #f5b400;
+    margin-bottom: 10px;
+}
+
+.number-card p{
+    color: #d0d0d0;
+    font-size: 1.2rem;
+}
+
+#team{
+    padding: 20px;
+}
+
+#team h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.team-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.team-card{
+    background-color: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.team-card:hover{
+    transform: translateY(-5px);
+    border-color: #f5b400;
+}
+
+.team-card img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.team-card p{
+    color: #bdbdbd;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px){
+
+    .team-cards{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    #history{
+        flex-direction: column;
+    }
+
+    #history figure,
+    #history div{
+        width: 100%;
+    }
+
 }
