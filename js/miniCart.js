@@ -130,7 +130,7 @@ function renderMiniCart() {
 
     if (hiddenCount > 0) {
         extraEl.hidden = false;
-        extraEl.textContent = `+${hiddenCount} produto${hiddenCount > 1 ? "s" : ""} adicionais${hiddenCount > 1 ? "" : ""} no carrinho`;
+        extraEl.textContent = `+${hiddenCount} produto${hiddenCount > 1 ? "s" : ""} adicional${hiddenCount > 1 ? "" : ""} no carrinho`;
     } else {
         extraEl.hidden = true;
     }
