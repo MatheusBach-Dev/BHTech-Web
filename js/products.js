@@ -20,6 +20,66 @@ const products = [
     },
 
     {
+        id: 11,
+        name: "Smartphone Lite",
+        desc: "128GB, bateria de longa duração.",
+        price: 1899,
+        category: "smartphones",
+        image: "/images/smartphone1.PNG",
+        features: ["128GB de armazenamento", "Câmera dupla de 32MP", "Tela LCD de 6.5 polegadas", "Bateria de 5000mAh", "Processador octa-core"]
+    },
+
+    {
+        id: 12,
+        name: "Iphone ",
+        desc: "256GB, tela AMOLED 120Hz.",
+        price: 3299,
+        category: "smartphones",
+        image: "/images/acessorio3.PNG",
+        features: ["256GB de armazenamento", "Câmera tripla de 50MP", "Tela AMOLED 120Hz de 6.6 polegadas", "Bateria de 4800mAh", "Carregamento rápido 33W"]
+    },
+
+    {
+        id: 13,
+        name: "Smartphone Basic",
+        desc: "64GB, entrada ideal.",
+        price: 999,
+        category: "smartphones",
+        image: "/images/smartphone3.PNG",
+        features: ["64GB de armazenamento", "Câmera de 13MP", "Tela IPS de 6.1 polegadas", "Bateria de 4000mAh", "Android 13"]
+    },
+
+    {
+        id: 14,
+        name: "Smartphone Gamer",
+        desc: "512GB, processador gamer.",
+        price: 5499,
+        category: "smartphones",
+        image: "/images/smartphone1.PNG",
+        features: ["512GB de armazenamento", "Tela AMOLED 144Hz de 6.78 polegadas", "Bateria de 6000mAh", "Resfriamento ativo", "Processador Snapdragon 8 Gen"]
+    },
+
+    {
+        id: 15,
+        name: "Smartphone Câmera Pro",
+        desc: "200MP, zoom óptico 10x.",
+        price: 7299,
+        category: "smartphones",
+        image: "/images/smartphone2.PNG",
+        features: ["Câmera principal de 200MP", "Zoom óptico 10x", "Vídeo 8K", "512GB de armazenamento", "Tela Dynamic AMOLED 6.8 polegadas"]
+    },
+
+    {
+        id: 16,
+        name: "Smartphone Dobrável",
+        desc: "Tela dobrável 7.6 polegadas.",
+        price: 9499,
+        category: "smartphones",
+        image: "/images/smartphone3.PNG",
+        features: ["Tela dobrável AMOLED de 7.6 polegadas", "256GB de armazenamento", "Câmera de 50MP", "Bateria dupla de 4400mAh", "Design ultrafino"]
+    },
+
+    {
         id: 3,
         name: "Fone Sem Fio Pro",
         desc: "Cancelamento de ruído ativo.",
@@ -97,7 +157,27 @@ const products = [
         category: "accessories",
         image: "../images/fone-com-fio.png",
         features: ["Driver de 14.2mm", "Microfone embutido", "Cabo de 1.2m", "Conector P2 universal", "Controle de volume"]
-    }
+    },
+
+    {
+        id: 17,
+        name: "Acessório Premium 1",
+        desc: "Acessório de alta qualidade.",
+        price: 149,
+        category: "accessories",
+        image: "/images/acessorio1.png",
+        features: ["Material premium", "Alta durabilidade", "Design moderno", "Compatível com diversos dispositivos", "Garantia inclusa"]
+    },
+
+    {
+        id: 18,
+        name: "Acessório Premium 2",
+        desc: "Acessório de alta qualidade.",
+        price: 179,
+        category: "accessories",
+        image: "/images/acessorio2.png",
+        features: ["Material premium", "Alta durabilidade", "Design moderno", "Compatível com diversos dispositivos", "Garantia inclusa"]
+    },
 ];
 
 const phoneNumber = "5531989166024";
@@ -146,7 +226,7 @@ const productsSearchInput = document.getElementById('products-search');
 const PRODUCTS_PER_PAGE = 6;
 
 let activeCategory = 'all';
-let maxPrice = 10000;
+let maxPrice = 1000;
 let currentPage = 1;
 let totalPages = 1;
 let searchQuery = '';

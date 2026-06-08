@@ -163,7 +163,7 @@ svg {
     isolation: isolate;
     display: flex;
     align-items: flex-start;
-    padding: clamp(108px, 15.2vh, 178px) clamp(24px, 7.05vw, 136px) 260px;
+    padding: clamp(108px, 15.2vh, 178px) clamp(24px, 7.05vw, 136px) clamp(80px, 12vh, 140px);
     background:
         linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.88) 32%, rgba(0, 0, 0, 0.22) 58%, rgba(0, 0, 0, 0.08) 100%),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.88) 100%),
@@ -318,7 +318,8 @@ svg {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     width: 100vw;
-    padding: 0 clamp(24px, 7.05vw, 136px) 74px;
+    padding: 74px clamp(24px, 7.05vw, 136px) 74px;
+    background: linear-gradient(180deg, #030303 0%, #0B0B0B 48%, #030303 100%);
 }
 
 .section-card {
@@ -537,7 +538,7 @@ footer p {
     }
 
     .section-experiences {
-        margin-top: -172px;
+        margin-top: 0;
     }
 
     .section-card {
@@ -595,11 +596,11 @@ footer p {
 
     .main-container {
         padding-top: clamp(72px, 10vh, 118px);
-        padding-bottom: 190px;
+        padding-bottom: clamp(80px, 12vh, 140px);
     }
 
     .section-experiences {
-        margin-top: -178px;
+        margin-top: 0;
     }
 
     .section-card {

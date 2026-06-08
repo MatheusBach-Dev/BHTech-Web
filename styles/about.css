@@ -1,6 +1,5 @@
 body{
     background-color: var(--cor-preta);
-    height: 1800px;
     color: white;
     font-family: var(--fonte-padrao);
 }
