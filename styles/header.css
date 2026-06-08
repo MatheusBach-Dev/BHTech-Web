@@ -323,8 +323,6 @@
 
 .logo {
     color: var(--cor-cinza-branco);
-    font-weight: 700;
-    font-size: 1.1rem;
 }
 .cart-toast {
     position: fixed;

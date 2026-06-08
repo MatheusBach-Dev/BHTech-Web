@@ -12,14 +12,19 @@ body {
     color: white;
 }
 
-#banner {
-    padding: 20px;
-    text-align: left;
-    padding-top: 100px;
+
+
+#subtitle{
+    font-family: var(--fonte-secundaria);
+}
+
+#banner .page-hero {
+    padding: 0;
+    width: 100%;
 }
 
 #info-map-container {
-    padding: 20px;
+    padding: clamp(32px, 5vh, 56px) 0;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -81,7 +86,7 @@ body {
 }
 
 #images {
-    padding: 20px;
+    padding: clamp(32px, 5vh, 56px) 0;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
