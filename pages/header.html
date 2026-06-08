@@ -1,22 +1,55 @@
 <header class="header" id="header">
     <div class="logo">
-        BH Celular
+        <span class="logo-badge">BH</span> Tech
     </div>
 
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <div class="header-right">
+        <nav id="nav">
+            <a href="/index.html">Home</a>
+            <a href="/pages/products.html">Produtos</a>
+            <a href="/pages/catalog.html">Catálogo</a>
+            <a href="/pages/location.html">Localização</a>
+            <a href="/pages/landingpage.html">Landing Page</a>
+            <a href="/pages/feedback.html">Feedback</a>
+            <a href="/pages/about.html">Sobre nós</a>
+        </nav>
 
-    <nav id="nav">
-        <a href="/index.html">Home</a>
-        <a href="/pages/products.html">Produtos</a>
-        <a href="/pages/catalog.html">Catálogo</a>
-        <a href="/pages/location.html">Localização</a>
-        <a href="/pages/landingpage.html">Landing Page</a>
-        <a href="/pages/promotions.html">Promoções</a>
-        <a href="/pages/feedback.html">Feedback</a>
-        <a href="/pages/about.html">Sobre nós</a>
-    </nav>
+        <button class="cart-btn" id="cart-btn" aria-label="Carrinho de compras">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                <path d="M3 6h18"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="cart-badge" id="cart-badge" hidden>0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+   <!-- pop-up do carrinho -->
+    <div class="mini-cart" id="mini-cart" hidden>
+        <div class="mini-cart-header">
+            <span>Carrinho</span>
+            <button class="mini-cart-close" id="mini-cart-close" aria-label="Fechar carrinho">×</button>
+        </div>
+        <div class="mini-cart-items" id="mini-cart-items"></div>
+        <div class="mini-cart-extra" id="mini-cart-extra" hidden></div>
+        <div class="mini-cart-footer" id="mini-cart-footer" hidden>
+            <div class="mini-cart-total">
+                <span>Total</span>
+                <strong id="mini-cart-total-value">R$ 0,00</strong>
+            </div>
+            <a href="/pages/cart.html" class="mini-cart-go-btn">Ir para o carrinho</a>
+        </div>
+        <div class="mini-cart-empty" id="mini-cart-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <p>Seu carrinho está vazio</p>
+            <a href="/pages/cart.html" class="mini-cart-go-btn">Ir para o carrinho</a>
+        </div>
+    </div>
+    <div class="mini-cart-overlay" id="mini-cart-overlay"></div>
 </header>

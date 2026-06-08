@@ -18,7 +18,7 @@
         <section class="feedback-hero" aria-labelledby="feedback-title">
             <p class="feedback-kicker">Avaliações reais</p>
             <h1 id="feedback-title">Feedback</h1>
-            <p>A opinião de quem confia na BH Celular.</p>
+            <p>A opinião de quem confia na BH Tech.</p>
         </section>
 
         <section class="rating-panel" aria-label="Resumo das avaliações">
@@ -160,7 +160,7 @@
             <div class="form-copy">
                 <p class="feedback-kicker">Sua vez</p>
                 <h2 id="form-title">Conte como foi sua experiência</h2>
-                <p>Seu feedback ajuda a BH Celular a melhorar atendimento, produtos e assistência técnica.</p>
+                <p>Seu feedback ajuda a BH Tech a melhorar atendimento, produtos e assistência técnica.</p>
             </div>
 
             <form class="feedback-form" id="client-feedback-form" novalidate>
@@ -206,7 +206,7 @@
 
                 <label class="recommend-row">
                     <input type="checkbox" name="recommend" checked>
-                    <span>Eu recomendaria a BH Celular para outras pessoas.</span>
+                    <span>Eu recomendaria a BH Tech para outras pessoas.</span>
                 </label>
 
                 <div class="form-actions">
@@ -217,7 +217,7 @@
                         </svg>
                         Enviar feedback
                     </button>
-                    <p class="form-status" role="status" aria-live="polite"></p>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                 </div>
             </form>
         </section>
@@ -225,13 +225,15 @@
 
     <script>
         fetch("header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
-                const headerScript = document.createElement("script");
-                headerScript.src = "/js/header.js";
-                document.body.appendChild(headerScript);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
     </script>
     <div id="footer-container"></div>
@@ -240,8 +242,9 @@
             .then(r => r.text())
             .then(data => document.getElementById("footer-container").innerHTML = data);
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/js/feedback.js"></script>
-
 </body>
 
 </html>

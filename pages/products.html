@@ -12,26 +12,38 @@
 
 </head>
 
-<body>
+<body class="page-bg">
 
     <div id="header-container"></div>
 
     <script>
         fetch("header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-                const script = document.createElement("script");
-                script.src = "../js/header.js";
-                document.body.appendChild(script);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
     </script>
 
-    <section id="banner">
-        <h1>Produtos</h1>
-        <p>Confira nossa seleção de smartphones, acessórios e serviços com garantia e procedência.</p>
+    <section class="page-hero">
+        <div>
+            <section class="catalog-hero" aria-labelledby="products-title">
+                <div class="catalog-hero-inner">
+                    <div class="catalog-kicker catalog-kicker-inter">produtos</div>
+                    <h1 class="catalog-title-poppins" id="products-title">Produtos</h1>
+                    <p class="catalog-subtitle-inter">Explore nossa seleção de produtos e serviços disponíveis — encontre o que precisa com informações claras e fotos.</p>
+                </div>
+            </section>
+        </div>
     </section>
 
+
+    <div class="page-container">
     <div class="main-container">
 
         <aside class="sidebar">
@@ -43,15 +55,21 @@
 
             <div class="price-filter">
                 <h3>Faixa de preço</h3>
-                <input type="range" id="price-range" min="0" max="10000" step="100" value="10000">
+                <input type="range" id="price-range" min="0" max="10000" step="100" value="1000">
                 <div class="price-values">
                     <span>R$ 0</span>
-                    <span id="price-display">R$ 10.000</span>
+                    <span id="price-display">R$ 1.000</span>
                 </div>
             </div>
         </aside>
 
         <main class="product-content">
+            <div class="products-controls" aria-label="Controles de pesquisa">
+                <div class="search-wrap">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input id="products-search" type="text" placeholder="Pesquisar por nome..." />
+                </div>
+            </div>
             <div id="product-list" class="product-grid"></div>
 
             <div class="pagination" id="pagination">
@@ -68,6 +86,7 @@
         </main>
 
     </div>
+    </div><!-- fim page-container -->
 
     <div id="product-modal" class="modal">
         <div class="modal-content">
