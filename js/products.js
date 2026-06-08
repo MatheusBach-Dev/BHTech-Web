@@ -25,7 +25,7 @@ const products = [
         desc: "128GB, bateria de longa duração.",
         price: 1899,
         category: "smartphones",
-        image: "/images/smartphone1.PNG",
+        image: "/images/smartphone1.png",
         features: ["128GB de armazenamento", "Câmera dupla de 32MP", "Tela LCD de 6.5 polegadas", "Bateria de 5000mAh", "Processador octa-core"]
     },
 
@@ -35,7 +35,7 @@ const products = [
         desc: "256GB, tela AMOLED 120Hz.",
         price: 3299,
         category: "smartphones",
-        image: "/images/acessorio3.PNG",
+        image: "/images/acessorio3.png",
         features: ["256GB de armazenamento", "Câmera tripla de 50MP", "Tela AMOLED 120Hz de 6.6 polegadas", "Bateria de 4800mAh", "Carregamento rápido 33W"]
     },
 
@@ -45,7 +45,7 @@ const products = [
         desc: "64GB, entrada ideal.",
         price: 999,
         category: "smartphones",
-        image: "/images/smartphone3.PNG",
+        image: "/images/smartphone3.png",
         features: ["64GB de armazenamento", "Câmera de 13MP", "Tela IPS de 6.1 polegadas", "Bateria de 4000mAh", "Android 13"]
     },
 
@@ -55,7 +55,7 @@ const products = [
         desc: "512GB, processador gamer.",
         price: 5499,
         category: "smartphones",
-        image: "/images/smartphone1.PNG",
+        image: "/images/smartphone1.png",
         features: ["512GB de armazenamento", "Tela AMOLED 144Hz de 6.78 polegadas", "Bateria de 6000mAh", "Resfriamento ativo", "Processador Snapdragon 8 Gen"]
     },
 
@@ -65,7 +65,7 @@ const products = [
         desc: "200MP, zoom óptico 10x.",
         price: 7299,
         category: "smartphones",
-        image: "/images/acessorio3.PNG",
+        image: "/images/acessorio3.png",
         features: ["Câmera principal de 200MP", "Zoom óptico 10x", "Vídeo 8K", "512GB de armazenamento", "Tela Dynamic AMOLED 6.8 polegadas"]
     },
 
@@ -75,7 +75,7 @@ const products = [
         desc: "Tela dobrável 7.6 polegadas.",
         price: 9499,
         category: "smartphones",
-        image: "/images/smartphone3.PNG",
+        image: "/images/smartphone3.png",
         features: ["Tela dobrável AMOLED de 7.6 polegadas", "256GB de armazenamento", "Câmera de 50MP", "Bateria dupla de 4400mAh", "Design ultrafino"]
     },
 
