@@ -215,16 +215,15 @@ body{
         width: 100%;
     }
 
-    .cards-container {
+    #difference .cards-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .number-cards {
+    #numbers .number-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .team-cards {
-        grid-template-columns: 1fr;
+    #team .team-cards {
+        grid-template-columns: 1fr !important;
     }
-
 }
