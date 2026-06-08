@@ -23,9 +23,9 @@ const BRAZILIAN_DDDS = new Set([
 ]);
 
 const COUPONS = {
-    BHTECH10: { label: "10% de desconto aplicado.", type: "percent", value: 0.1 },
-    BHTECH60: { label: "60% de desconto aplicado.", type: "percent", value: 0.6 },
-    PRIMEIRA50: { label: "R$ 50,00 de desconto aplicado.", type: "fixed", value: 50 }
+    BHTECH10: { label: "10% de desconto aplicado!", type: "percent", value: 0.1 },
+    BHTECH60: { label: "60% de desconto aplicado!", type: "percent", value: 0.6 },
+    PRIMEIRA50: { label: "R$ 50,00 de desconto aplicado!", type: "fixed", value: 50 }
 };
 
 const cartConfig = {
