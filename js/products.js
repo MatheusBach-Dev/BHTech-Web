@@ -65,7 +65,7 @@ const products = [
         desc: "200MP, zoom óptico 10x.",
         price: 7299,
         category: "smartphones",
-        image: "/images/smartphone2.PNG",
+        image: "/images/acessorio3.PNG",
         features: ["Câmera principal de 200MP", "Zoom óptico 10x", "Vídeo 8K", "512GB de armazenamento", "Tela Dynamic AMOLED 6.8 polegadas"]
     },
 

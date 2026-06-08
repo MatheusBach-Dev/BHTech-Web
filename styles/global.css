@@ -26,11 +26,12 @@
 /* indicador que a pessoa pode scrollar a pagina */
 .scroll-indicator {
     position: absolute;
-    bottom: 60px;
+    bottom: clamp(20px, 4vh, 60px);
     left: 50%;
     transform: translateX(-50%);
-    width: 28px;
+    width: clamp(22px, 2.5vw, 28px);
     opacity: 0.7;
+    z-index: 2;
 }
 
 .scroll-indicator svg rect {
