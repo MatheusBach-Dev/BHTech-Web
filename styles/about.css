@@ -192,23 +192,39 @@ body{
     font-size: 1rem;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .team-cards{
-        grid-template-columns: 1fr;
+    body {
+        overflow-x: hidden;
     }
 
-}
+    #banner {
+        padding-top: 70px;
+    }
 
-@media (max-width: 768px){
+    #banner h1 {
+        font-size: 1.8rem;
+    }
 
-    #history{
+    #history {
         flex-direction: column;
     }
 
     #history figure,
-    #history div{
+    #history div {
         width: 100%;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .number-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-cards {
+        grid-template-columns: 1fr;
     }
 
 }
