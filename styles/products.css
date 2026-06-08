@@ -15,9 +15,7 @@ body {
 }
 
 #banner {
-    padding: 120px 40px 20px;
-    text-align: left;
-    padding-left: 110px;
+    padding: 0;
 }
 
 #banner .page-hero {
@@ -452,9 +450,9 @@ input[type=range] {
 .main-container {
     display: flex;
     gap: clamp(2rem, 3vw, 2.5rem);
-    width: min(1280px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
+    width: 100%;
     margin: 0 auto;
-    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    padding: 0;
 }
 
 @media (max-width: 1024px) {

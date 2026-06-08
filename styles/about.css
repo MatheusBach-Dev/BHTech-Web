@@ -34,7 +34,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 40px;
-    padding: 20px;
+    padding: clamp(32px, 5vh, 56px) 0;
     align-items: flex-start;
 }
 
@@ -64,8 +64,8 @@ body{
     border-radius: 8px;
 }
 
-#difference{
-    padding: 20px;
+#difference {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #difference h2{
@@ -111,8 +111,8 @@ body{
     font-size: 1.2rem;
 }
 
-#numbers{
-    padding: 20px;
+#numbers {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #numbers h2{
@@ -146,8 +146,8 @@ body{
     font-size: 1.2rem;
 }
 
-#team{
-    padding: 20px;
+#team {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #team h2{

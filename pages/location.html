@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/styles/location.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
-    <script src="../js/location.js" defer></script>
 </head>
 
 <body>
@@ -29,7 +28,7 @@
             });
     </script>
 
-    <section id="banner">
+    <section>
         <div class="page-hero">
             <p class="page-hero-kicker">Onde estamos</p>
             <h1>Localização</h1>
@@ -37,6 +36,7 @@
         </div>
     </section>
 
+    <div class="page-container">
     <div id="info-map-container">
         <section id="info">
             <div class="selector-container" style="text-align: left; margin: 20px 0;">
@@ -55,7 +55,7 @@
                     <figure><img src="../images/icon-location.png" alt="Endereço"></figure>
                     <h3>Endereço</h3>
                 </div>
-                <p id="endereco-p">R. Contagem, 1257 - Santa Ines, Belo Horizonte - MG, 31070-065</p>
+                <p id="endereco-p" id="subtitle">R. Contagem, 1257 - Santa Ines, Belo Horizonte - MG, 31070-065</p>
             </div>
 
             <div class="info-block">
@@ -63,7 +63,7 @@
                     <figure><img src="../images/icon-telephone.png" alt="Telefone"></figure>
                     <h3>Telefone</h3>
                 </div>
-                <p>(31) 88786-4321</p>
+                <p id="subtitle">(31) 88786-4321</p>
             </div>
 
             <div class="info-block">
@@ -71,7 +71,7 @@
                     <figure><img src="../images/icon-whatsapp.svg" alt="WhatsApp"></figure>
                     <h3>WhatsApp</h3>
                 </div>
-                <p>(31) 98878-6432</p>
+                <p id="subtitle">(31) 98878-6432</p>
             </div>
 
             <div class="info-block">
@@ -79,7 +79,7 @@
                     <figure><img src="../images/icon-mail.png" alt="Email"></figure>
                     <h3>Email</h3>
                 </div>
-                <p>contato@bhcelular.com.br</p>
+                <p id="subtitle">contato@bhtech.com.br</p>
             </div>
 
             <div class="info-block">
@@ -87,7 +87,7 @@
                     <figure><img src="../images/icon-clock.png" alt="Horário de Funcionamento"></figure>
                     <h3>Horário de Funcionamento</h3>
                 </div>
-                <p id="horario-p">
+                <p id="horario-p" id="subtitle">
                     Seg. a Sex. das 09h às 19h | Sáb. das 09h às 17h | Dom. das 09h às 12h.
                 </p>
             </div>
@@ -107,6 +107,9 @@
         <figure><img src="../images/store2.png" alt="Loja Física 2"></figure>
         <figure><img src="../images/store3.png" alt="Loja Física 3"></figure>
     </section>
+    </div><!-- fim page-container -->
+
+    <script src="../js/location.js"></script>
     <div id="footer-container"></div>
     <script>
         fetch("/pages/footer.html")
