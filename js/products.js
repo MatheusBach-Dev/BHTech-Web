@@ -226,7 +226,7 @@ const productsSearchInput = document.getElementById('products-search');
 const PRODUCTS_PER_PAGE = 6;
 
 let activeCategory = 'all';
-let maxPrice = 1000;
+let maxPrice = 500;
 let currentPage = 1;
 let totalPages = 1;
 let searchQuery = '';
