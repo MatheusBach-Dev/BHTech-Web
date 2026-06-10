@@ -30,15 +30,9 @@ svg {
     min-height: 100vh;
 }
 
-.cart-main {
-    width: min(1260px, calc(100% - 44px));
-    margin: 5rem auto 0 auto;
-    padding: clamp(34px, 5vh, 66px) 0 78px;
-}
 
 .cart-hero,
 .cart-main > .page-hero {
-
     margin-bottom: 28px;
     width: 100%;
     padding: 0;

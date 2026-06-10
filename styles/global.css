@@ -52,17 +52,11 @@ html, body {
     min-height: 100vh;
 }
 
-/* padrao das paginas*/
-.page-hero {
-    width: min(1180px, calc(100% - 44px));
-    margin: 0 auto;
-    padding: clamp(100px, 14vh, 140px) 0 clamp(24px, 4vh, 48px);
-}
-
-.page-container {
-    width: min(1180px, calc(100% - 44px));
-    margin: 0 auto;
-    padding-bottom: clamp(48px, 8vh, 80px);
+/* padding padrao global */
+.page-main {
+    width: min(1260px, calc(100% - 44px));
+    margin: 5rem auto 0 auto;
+    padding: clamp(34px, 5vh, 66px) 0 78px;
 }
 
 .page-section {
@@ -72,9 +66,9 @@ html, body {
 .page-bg {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 78% 2%, rgba(252, 191, 7, 0.14), transparent 30rem),
-        radial-gradient(circle at 8% 0%, rgba(255, 252, 248, 0.05), transparent 20rem),
-        linear-gradient(150deg, #020202 0%, #0b0b0b 48%, #030303 100%);
+    radial-gradient(circle at 78% 2%, rgba(252, 191, 7, 0.14), transparent 30rem),
+    radial-gradient(circle at 8% 0%, rgba(255, 252, 248, 0.05), transparent 20rem),
+    linear-gradient(150deg, #020202 0%, #0b0b0b 48%, #030303 100%);
 }
 
 .page-hero-kicker {

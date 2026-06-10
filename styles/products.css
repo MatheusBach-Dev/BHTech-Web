@@ -21,7 +21,6 @@ body {
 }
 
 .catalog-hero { margin-bottom: clamp(0.75rem, 1.5vh, 1rem); }
-.catalog-hero-inner { padding-top: clamp(2rem, 5vh, 4.25rem); }
 
 .catalog-kicker { 
     color: #FCBF07;
@@ -31,7 +30,10 @@ body {
     text-transform: uppercase;
     margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
 }
-.catalog-kicker-inter { font-family: 'Inter', sans-serif; }
+.catalog-kicker-inter { 
+    font-family: 'Inter', sans-serif;
+    font-size: var(--texto-sm);
+}
 
 .catalog-title-poppins {
     color: #fff;
@@ -48,6 +50,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.65;
+    padding-bottom: 10px;
 }
 
 h1, h2, h3 { font-family: 'Poppins', sans-serif; }

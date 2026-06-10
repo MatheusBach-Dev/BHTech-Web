@@ -26,7 +26,9 @@
                 }
                 loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
+            
     </script>
+    <main class="page-main">
         <section class="catalog-page">
         <div class="catalog-main">
             <div class="page-hero">
@@ -130,6 +132,8 @@
             </section>
         </div>
     </section>
+    </main>
+
     <div id="footer-container"></div>
     <script>
         fetch("/pages/footer.html")

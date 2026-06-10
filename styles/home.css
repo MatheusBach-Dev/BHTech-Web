@@ -165,9 +165,9 @@ svg {
     align-items: flex-start;
     padding: clamp(108px, 15.2vh, 178px) clamp(24px, 7.05vw, 136px) clamp(100px, 14vh, 160px);
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.88) 32%, rgba(0, 0, 0, 0.22) 58%, rgba(0, 0, 0, 0.08) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.88) 100%),
-        url("../images/fundo-home.png") center right / cover no-repeat;
+    linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.88) 32%, rgba(0, 0, 0, 0.22) 58%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.88) 100%),
+    url("../images/fundo-home.png") center right / cover no-repeat;
 }
 
 .main-container::before {

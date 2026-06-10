@@ -30,76 +30,79 @@
             });
     </script>
 
-    <section class="page-hero">
-        <div>
-            <section class="catalog-hero" aria-labelledby="products-title">
-                <div class="catalog-hero-inner">
-                    <div class="catalog-kicker catalog-kicker-inter">produtos</div>
-                    <h1 class="catalog-title-poppins" id="products-title">Produtos</h1>
-                    <p class="catalog-subtitle-inter">Explore nossa seleção de produtos e serviços disponíveis — encontre o que precisa com informações claras e fotos.</p>
+    <main class="page-main">
+
+            <div>
+                <section class="catalog-hero" aria-labelledby="products-title">
+                    <div class="catalog-hero-inner">
+                        <div class="catalog-kicker catalog-kicker-inter">produtos</div>
+                        <h1 class="catalog-title-poppins" id="products-title">Produtos</h1>
+                        <p class="catalog-subtitle-inter">Explore nossa seleção de produtos e serviços disponíveis —
+                            encontre o que precisa com informações claras e fotos.</p>
+                    </div>
+                </section>
+            </div>
+
+
+        <div class="page-container">
+            <div class="main-container">
+
+                <aside class="sidebar">
+                    <div class="category-list">
+                        <button class="category-btn active" data-category="all">Todos</button>
+                        <button class="category-btn" data-category="smartphones">Smartphones</button>
+                        <button class="category-btn" data-category="accessories">Acessórios</button>
+                    </div>
+
+                    <div class="price-filter">
+                        <h3>Faixa de preço</h3>
+                        <input type="range" id="price-range" min="0" max="10000" step="100" value="500">
+                        <div class="price-values">
+                            <span>R$ 0</span>
+                            <span id="price-display">R$ 500</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <main class="product-content">
+                    <div class="products-controls" aria-label="Controles de pesquisa">
+                        <div class="search-wrap">
+                            <span class="search-icon" aria-hidden="true">🔍</span>
+                            <input id="products-search" type="text" placeholder="Pesquisar por nome..." />
+                        </div>
+                    </div>
+                    <div id="product-list" class="product-grid"></div>
+
+                    <div class="pagination" id="pagination">
+                        <div class="pagination-numbers" id="pagination-numbers"></div>
+                        <div class="pagination-arrow" id="pagination-arrow">
+                            <span class="arrow-next" id="arrow-next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div><!-- fim page-container -->
+
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <div class="modal-image"></div>
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    <div id="modal-price" class="product-price"></div>
+                    <a id="modal-buy-btn" class="buy-btn" target="_blank">Comprar</a>
                 </div>
-            </section>
+            </div>
         </div>
-    </section>
-
-
-    <div class="page-container">
-    <div class="main-container">
-
-        <aside class="sidebar">
-            <div class="category-list">
-                <button class="category-btn active" data-category="all">Todos</button>
-                <button class="category-btn" data-category="smartphones">Smartphones</button>
-                <button class="category-btn" data-category="accessories">Acessórios</button>
-            </div>
-
-            <div class="price-filter">
-                <h3>Faixa de preço</h3>
-                <input type="range" id="price-range" min="0" max="10000" step="100" value="500">
-                <div class="price-values">
-                    <span>R$ 0</span>
-                    <span id="price-display">R$ 500</span>
-                </div>
-            </div>
-        </aside>
-
-        <main class="product-content">
-            <div class="products-controls" aria-label="Controles de pesquisa">
-                <div class="search-wrap">
-                    <span class="search-icon" aria-hidden="true">🔍</span>
-                    <input id="products-search" type="text" placeholder="Pesquisar por nome..." />
-                </div>
-            </div>
-            <div id="product-list" class="product-grid"></div>
-
-            <div class="pagination" id="pagination">
-                <div class="pagination-numbers" id="pagination-numbers"></div>
-                <div class="pagination-arrow" id="pagination-arrow">
-                    <span class="arrow-next" id="arrow-next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </span>
-                </div>
-            </div>
-        </main>
-
-    </div>
-    </div><!-- fim page-container -->
-
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-modal">&times;</span>
-            <div class="modal-image"></div>
-            <div class="modal-info">
-                <h2 id="modal-title"></h2>
-                <p id="modal-desc"></p>
-                <div id="modal-price" class="product-price"></div>
-                <a id="modal-buy-btn" class="buy-btn" target="_blank">Comprar</a>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <div id="footer-container"></div>
     <script>

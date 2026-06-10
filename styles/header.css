@@ -433,6 +433,7 @@
         background-color: var(--cor-preta, #141414);
         padding: 20px 40px;
         gap: 25px 40px;
+        align-items: flex-start;
     }
 
     #nav.aberto {

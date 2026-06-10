@@ -20,25 +20,14 @@ body {
     min-height: 100vh;
 }
 
-.catalog-main {
-    width: min(var(--catalog-max), calc(100% - clamp(1.5rem, 4vw, 3rem)));
-    margin: clamp(1.5rem, 3vh, 3rem) auto 0 auto;
-    padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
-}
-
 .catalog-hero,
 .catalog-main > .page-hero {
     margin-bottom: 24px;
+    width: min(1200px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
+    margin: 0 auto;
 }
 
-.catalog-hero-inner {
-    padding-top: clamp(2rem, 5vh, 4.25rem);
-}
 
-.catalog-main > .page-hero {
-    padding-top: clamp(80px, 12vh, 120px);
-    padding-bottom: 0;
-}
 
 .catalog-kicker {
     color: var(--cor-amarelo);
