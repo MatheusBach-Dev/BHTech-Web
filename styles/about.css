@@ -1,18 +1,25 @@
 body{
     background-color: var(--cor-preta);
-    height: 1800px;
     color: white;
+    font-family: var(--fonte-padrao);
 }
 
 #banner {
     padding: 20px;
     text-align: left;
     padding-top: 100px;
+}
 
+#banner .page-hero {
+    padding: 0;
+    width: 100%;
+}
+
+#subtitle{
+    font-family: var(--fonte-secundaria);
 }
 
 #banner p{
-    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -26,7 +33,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 40px;
-    padding: 20px;
+    padding: clamp(32px, 5vh, 56px) 0;
     align-items: flex-start;
 }
 
@@ -56,8 +63,8 @@ body{
     border-radius: 8px;
 }
 
-#difference{
-    padding: 20px;
+#difference {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #difference h2{
@@ -103,8 +110,8 @@ body{
     font-size: 1.2rem;
 }
 
-#numbers{
-    padding: 20px;
+#numbers {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #numbers h2{
@@ -138,8 +145,8 @@ body{
     font-size: 1.2rem;
 }
 
-#team{
-    padding: 20px;
+#team {
+    padding: clamp(32px, 5vh, 56px) 0;
 }
 
 #team h2{
@@ -149,7 +156,7 @@ body{
 
 .team-cards{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -185,23 +192,38 @@ body{
     font-size: 1rem;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .team-cards{
-        grid-template-columns: 1fr;
+    body {
+        overflow-x: hidden;
     }
 
-}
+    #banner {
+        padding-top: 70px;
+    }
 
-@media (max-width: 768px){
+    #banner h1 {
+        font-size: 1.8rem;
+    }
 
-    #history{
+    #history {
         flex-direction: column;
     }
 
     #history figure,
-    #history div{
+    #history div {
         width: 100%;
     }
 
+    #difference .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #numbers .number-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #team .team-cards {
+        grid-template-columns: 1fr !important;
+    }
 }

@@ -1,13 +1,13 @@
-# 📱 BH Celular - Website
+# 📱 BH Tech - Website
 
 ## 📖 Sobre o Projeto
 Este projeto consiste no desenvolvimento de um site, utilizando HTML, CSS e JavaScript.  
-O objetivo é criar uma plataforma moderna, responsiva e funcional para apresentar produtos, serviços e informações da loja BH Celular.
+O objetivo é criar uma plataforma moderna, responsiva e funcional para apresentar produtos, serviços e informações da loja BH Tech.
 
 ## 🎯 Objetivos
 - Criar um site visualmente atraente  
 - Garantir responsividade (funcionar em celular, tablet e computador)  
-- Exibir produtos e serviços da BH Celular  
+- Exibir produtos e serviços da BH Tech  
 - Implementar interações com JavaScript  
 - Melhorar a experiência do usuário (UX)  
 
@@ -22,5 +22,5 @@ O objetivo é criar uma plataforma moderna, responsiva e funcional para apresent
 - **Design Gráfico:** André Sette  
 - **Copywriter:** Pedro Borges  
 
-**Este projeto foi desenvolvido para fins acadêmicos como MVP e proposta de presença digital para a loja BH Celular.**
+**Este projeto foi desenvolvido para fins acadêmicos como MVP e proposta de presença digital para a loja BH Tech.**
 

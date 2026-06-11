@@ -331,13 +331,33 @@ a {
 
 @media (max-width: 720px) {
 
+    .landing-main-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100svh;
+        padding: clamp(80px, 12vh, 120px) 22px clamp(48px, 8vh, 80px);
+        align-items: start;
+    }
+
+    .landing-hero-content {
+        max-width: 100%;
+    }
+
+    .landing-hero-visual {
+        display: none;
+    }
+
     .section-benefits,
     .section-highlights {
         width: min(100% - 28px, 1180px);
     }
 
     .landing-main-container-title {
-        font-size: clamp(2.2rem, 3rem, 3rem);
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+    }
+
+    .landing-main-container-description {
+        font-size: 0.96rem;
     }
 
     .landing-main-container-buttons {
@@ -348,10 +368,6 @@ a {
     .landing-main-container-catalog-button,
     .landing-main-container-whats-button {
         width: 100%;
-    }
-
-    .landing-hero-visual img {
-        min-height: 250px;
     }
 
     .section-benefits-container {
@@ -378,8 +394,20 @@ a {
 }
 
 @media (max-width: 480px) {
+    .landing-main-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .landing-main-container-top {
+        font-size: 0.72rem;
+    }
+
+    .landing-main-container-title {
+        font-size: clamp(1.75rem, 7.5vw, 2.2rem);
+    }
+
     .section-highlights-container-cards {
         grid-template-columns: 1fr;
     }
-
 }

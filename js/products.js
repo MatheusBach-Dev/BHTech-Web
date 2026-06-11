@@ -5,7 +5,7 @@ const products = [
         desc: "256GB, câmera tripla, tela OLED.",
         price: 4999,
         category: "smartphones",
-        image: "../products-images/smarthphone-pro.png",
+        image: "../images/smarthphone-pro.png",
         features: ["256GB de armazenamento", "Câmera tripla de 48MP", "Tela OLED de 6.7 polegadas", "Bateria de 4500mAh", "Processador octa-core"]
     },
 
@@ -15,8 +15,68 @@ const products = [
         desc: "512GB, alto desempenho.",
         price: 6499,
         category: "smartphones",
-        image: "../products-images/smarthphone-ultra.png",
+        image: "../images/smarthphone-ultra.png",
         features: ["512GB de armazenamento", "Câmera quádrupla de 64MP", "Tela Super AMOLED de 6.9 polegadas", "Bateria de 5000mAh", "Processador topo de linha"]
+    },
+
+    {
+        id: 11,
+        name: "Smartphone Lite",
+        desc: "128GB, bateria de longa duração.",
+        price: 1899,
+        category: "smartphones",
+        image: "/images/smartphone1.png",
+        features: ["128GB de armazenamento", "Câmera dupla de 32MP", "Tela LCD de 6.5 polegadas", "Bateria de 5000mAh", "Processador octa-core"]
+    },
+
+    {
+        id: 12,
+        name: "Iphone ",
+        desc: "256GB, tela AMOLED 120Hz.",
+        price: 3299,
+        category: "smartphones",
+        image: "/images/acessorio3.png",
+        features: ["256GB de armazenamento", "Câmera tripla de 50MP", "Tela AMOLED 120Hz de 6.6 polegadas", "Bateria de 4800mAh", "Carregamento rápido 33W"]
+    },
+
+    {
+        id: 13,
+        name: "Smartphone Basic",
+        desc: "64GB, entrada ideal.",
+        price: 999,
+        category: "smartphones",
+        image: "/images/smartphone3.png",
+        features: ["64GB de armazenamento", "Câmera de 13MP", "Tela IPS de 6.1 polegadas", "Bateria de 4000mAh", "Android 13"]
+    },
+
+    {
+        id: 14,
+        name: "Smartphone Gamer",
+        desc: "512GB, processador gamer.",
+        price: 5499,
+        category: "smartphones",
+        image: "/images/smartphone1.png",
+        features: ["512GB de armazenamento", "Tela AMOLED 144Hz de 6.78 polegadas", "Bateria de 6000mAh", "Resfriamento ativo", "Processador Snapdragon 8 Gen"]
+    },
+
+    {
+        id: 15,
+        name: "Smartphone Câmera Pro",
+        desc: "200MP, zoom óptico 10x.",
+        price: 7299,
+        category: "smartphones",
+        image: "/images/acessorio3.png",
+        features: ["Câmera principal de 200MP", "Zoom óptico 10x", "Vídeo 8K", "512GB de armazenamento", "Tela Dynamic AMOLED 6.8 polegadas"]
+    },
+
+    {
+        id: 16,
+        name: "Smartphone Dobrável",
+        desc: "Tela dobrável 7.6 polegadas.",
+        price: 9499,
+        category: "smartphones",
+        image: "/images/smartphone3.png",
+        features: ["Tela dobrável AMOLED de 7.6 polegadas", "256GB de armazenamento", "Câmera de 50MP", "Bateria dupla de 4400mAh", "Design ultrafino"]
     },
 
     {
@@ -25,7 +85,7 @@ const products = [
         desc: "Cancelamento de ruído ativo.",
         price: 499,
         category: "accessories",
-        image: "../products-images/fone-sem-fio.png",
+        image: "../images/fone-sem-fio.png",
         features: ["Cancelamento de ruído ativo (ANC)", "Bateria de até 30 horas", "Driver de 40mm", "Conexão Bluetooth 5.2", "Carregamento USB-C"]
     },
 
@@ -35,7 +95,7 @@ const products = [
         desc: "Carregamento rápido.",
         price: 129,
         category: "accessories",
-        image: "../products-images/carregador.png",
+        image: "../images/carregador.png",
         features: ["Potência de 20W", "Carregamento rápido PD", "Compatível com múltiplos dispositivos", "Proteção contra sobrecarga", "Cabo USB-C incluído"]
     },
 
@@ -45,7 +105,7 @@ const products = [
         desc: "Proteção reforçada.",
         price: 79,
         category: "accessories",
-        image: "../products-images/capinha-antichoque.png",
+        image: "../images/capinha-antichoque.png",
         features: ["Material TPU de alta resistência", "Proteção em todas as pontas", "Suporte para cartão", "Design slim", "Disponível em várias cores"]
     },
 
@@ -55,7 +115,7 @@ const products = [
         desc: "Proteção de tela completa.",
         price: 59,
         category: "accessories",
-        image: "../products-images/pelicula.png",
+        image: "../images/pelicula.png",
         features: ["Cobertura 3D completa", "Vidro temperado 9H", "Revestimento oleofóbico", "Sensibilidade touchscreen", "Fácil instalação sem bolhas"]
     },
 
@@ -65,7 +125,7 @@ const products = [
         desc: "Bateria extra para o dia todo.",
         price: 199,
         category: "accessories",
-        image: "../products-images/powerbank.png",
+        image: "../images/powerbank.png",
         features: ["Capacidade de 10.000mAh", "Carregamento rápido bidirecional", "2 portas USB", "Indicador LED de carga", "Design compacto"]
     },
 
@@ -75,7 +135,7 @@ const products = [
         desc: "Fixação magnética forte.",
         price: 49,
         category: "accessories",
-        image: "../products-images/suporte-veicular.png",
+        image: "../images/suporte-veicular.png",
         features: ["Ímã super forte", "Rotação 360°", "Compatível com qualquer aparelho", "Fácil instalação", "Não danifica o aparelho"]
     },
 
@@ -85,7 +145,7 @@ const products = [
         desc: "Super aderência em superfícies planas.",
         price: 100,
         category: "accessories",
-        image: "../products-images/capinha-aderente.png",
+        image: "../images/capinha-aderente.png",
         features: ["Material emborrachado antiderrapante", "Design ultrafino", "Proteção contra quedas", "Acesso fácil a todos os botões", "Leve e confortável"]
     },
 
@@ -95,33 +155,42 @@ const products = [
         desc: "Microfone embutido com equalização.",
         price: 20,
         category: "accessories",
-        image: "../products-images/fone-com-fio.png",
+        image: "../images/fone-com-fio.png",
         features: ["Driver de 14.2mm", "Microfone embutido", "Cabo de 1.2m", "Conector P2 universal", "Controle de volume"]
-    }
+    },
+
+    {
+        id: 17,
+        name: "Acessório Premium 1",
+        desc: "Acessório de alta qualidade.",
+        price: 149,
+        category: "accessories",
+        image: "/images/acessorio1.png",
+        features: ["Material premium", "Alta durabilidade", "Design moderno", "Compatível com diversos dispositivos", "Garantia inclusa"]
+    },
+
+    {
+        id: 18,
+        name: "Acessório Premium 2",
+        desc: "Acessório de alta qualidade.",
+        price: 179,
+        category: "accessories",
+        image: "/images/acessorio2.png",
+        features: ["Material premium", "Alta durabilidade", "Design moderno", "Compatível com diversos dispositivos", "Garantia inclusa"]
+    },
 ];
 
 const phoneNumber = "5531989166024";
 
 const formatCurrency = (value) => value.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
 
-const getProductImageSrc = (product) => {
-    const fallback = "";
-    const src = product?.image;
-
-    if (!src) return fallback;
-
-    if (src.startsWith("../products-images/")) {
-        return `/products-images/${src.replace("../products-images/", "")}`;
-    }
-    if (src.startsWith("../images/")) {
-        return `/images/${src.replace("../images/", "")}`;
-    }
-
-    const normalized = src.startsWith("http") || src.startsWith("/") ? src : `/${src}`;
-    return normalized;
+const getProductImageSrc = (product = {}) => {
+    const src = product.image || '';
+    if (!src) return '';
+    if (src.startsWith('../products-images/')) return `/products-images/${src.slice(19)}`;
+    if (src.startsWith('../images/')) return `/images/${src.slice(10)}`;
+    return src.startsWith('http') || src.startsWith('/') ? src : `/${src}`;
 };
-
-
 
 const renderProductImage = (product, { className = "product-img", alt = product?.name || "Produto" } = {}) => {
     const src = getProductImageSrc(product);
@@ -152,19 +221,22 @@ const priceDisplaySpan = document.getElementById('price-display');
 const categoryButtons = document.querySelectorAll('.category-btn');
 const paginationNumbers = document.getElementById('pagination-numbers');
 const arrowNext = document.getElementById('arrow-next');
+const productsSearchInput = document.getElementById('products-search');
 
 const PRODUCTS_PER_PAGE = 6;
 
 let activeCategory = 'all';
-let maxPrice = 10000;
+let maxPrice = 500;
 let currentPage = 1;
 let totalPages = 1;
+let searchQuery = '';
 
 function getFilteredProducts() {
     return products.filter(product => {
         const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
         const matchesPrice = product.price <= maxPrice;
-        return matchesCategory && matchesPrice;
+        const matchesSearch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesPrice && matchesSearch;
     });
 }
 
@@ -234,8 +306,16 @@ function renderProducts() {
 }
 
 if (productListContainer) {
+    if (productsSearchInput) {
+        productsSearchInput.addEventListener('input', (event) => {
+            searchQuery = event.target.value.trim();
+            currentPage = 1;
+            renderProducts();
+        });
+    }
+
     priceRangeInput.addEventListener('input', (event) => {
-        maxPrice = parseInt(event.target.value);
+        maxPrice = parseInt(event.target.value, 10);
         priceDisplaySpan.textContent = `R$ ${formatCurrency(maxPrice)}`;
         currentPage = 1;
         renderProducts();
@@ -262,7 +342,6 @@ if (productListContainer) {
 }
 
 if (isDetailPage) {
-    document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
         const product = products.find(p => p.id === productId);
@@ -320,7 +399,6 @@ if (isDetailPage) {
 
             document.title = `${product.name} - BH Tech`;
 
-
             const addToCartBtnTop = document.getElementById('add-to-cart-btn');
             if (addToCartBtnTop) {
                 addToCartBtnTop.addEventListener('click', () => {
@@ -358,5 +436,4 @@ if (isDetailPage) {
                 </div>
             `;
         }
-    });
 }

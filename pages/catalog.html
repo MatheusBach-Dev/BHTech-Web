@@ -4,34 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog</title>
+    <title>Catalogo | BH Tech</title>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="/styles/catalog.css">
 </head>
 
-<body>
+<body class="page-bg">
     <div id="header-container"></div>
 
     <script>
         fetch("header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
-                const script = document.createElement("script");
-                script.src = "/js/header.js";
-                document.body.appendChild(script);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
+            
     </script>
+    <main class="page-main">
+        <section class="catalog-page">
+        <div class="catalog-main">
+            <div class="page-hero">
+                <p class="page-hero-kicker">catálogo</p>
+                <h1>Produtos e Serviços</h1>
+                <p>Confira nossos itens com imagem, categoria, preço, descrição e disponibilidade.</p>
+            </div>
+
+            <div class="catalog-controls" aria-label="Controles de pesquisa e filtros">
+                <div class="search-wrap">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input id="catalog-search" type="text" placeholder="Pesquisar..." />
+                </div>
+
+                <button id="open-filters" type="button" class="filter-btn" aria-haspopup="dialog" aria-controls="filters-modal">
+                    <span class="filter-btn-icon" aria-hidden="true">⏷</span>
+                    Filtros
+                </button>
+            </div>
+
+            <div id="filters-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="filters-title" hidden>
+                <div class="modal-backdrop" data-close-modal="true"></div>
+                <div class="modal-content" role="document">
+                    <div class="modal-header">
+                        <div>
+                            <div id="filters-title" class="modal-title">Filtros</div>
+                            <div class="modal-subtitle">Refine por categoria, tipo e preço</div>
+                        </div>
+                        <button type="button" class="modal-close" aria-label="Fechar" data-close-modal="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="field">
+                            <label for="filter-category">Categoria</label>
+                            <select id="filter-category">
+                                <option value="all">Todos</option>
+                                <option value="products">Produtos</option>
+                                <option value="services">Serviços</option>
+                            </select>
+                        </div>
+
+                        <div class="field field-type">
+                            <label for="filter-type">Tipo</label>
+                            <select id="filter-type" disabled>
+                                <option value="all">Todos</option>
+                                <option value="smartphones">Smartphone</option>
+                                <option value="accessories">Acessório</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="filter-price">Preço máximo: <span id="filter-price-value">10000</span></label>
+                            <input id="filter-price" type="range" min="0" max="10000" step="50" value="10000" />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-ghost" id="clear-filters">Limpar</button>
+                        <button type="button" class="btn btn-primary" id="apply-filters">Aplicar Filtros</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="table-section">
+                <div class="table-heading">
+                    <h2 class="table-title">Produtos</h2>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="catalog-table" aria-label="Tabela de produtos">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <div class="table-heading">
+                    <h2 class="table-title">Serviços</h2>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="catalog-table" aria-label="Tabela de serviços" data-table="services">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody id="services-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </section>
+    </main>
+
     <div id="footer-container"></div>
     <script>
         fetch("/pages/footer.html")
             .then(r => r.text())
             .then(data => document.getElementById("footer-container").innerHTML = data);
-    </script>
+</script>
 
+    <script src="/js/products.js"></script>
+    <script src="/js/catalog.js"></script>
 </body>
 
 </html>

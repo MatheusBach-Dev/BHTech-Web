@@ -6,3 +6,8 @@ body{
 p{
     color: white;
 }
+
+.main-uptitle{
+    font-size: 16px;
+    font-family: var("Inter", sans-serif);
+}

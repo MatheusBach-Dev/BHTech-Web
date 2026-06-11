@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Feedback | BH Tech</title>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
@@ -14,7 +14,7 @@
 <body class="feedback-page">
     <div id="header-container"></div>
 
-    <main class="feedback-main">
+    <main class="page-main feedback-form">
         <section class="feedback-hero" aria-labelledby="feedback-title">
             <p class="feedback-kicker">Avaliações reais</p>
             <h1 id="feedback-title">Feedback</h1>
@@ -225,13 +225,15 @@
 
     <script>
         fetch("header.html")
-            .then(response => response.text())
+            .then(r => r.text())
             .then(data => {
                 document.getElementById("header-container").innerHTML = data;
-
-                const headerScript = document.createElement("script");
-                headerScript.src = "/js/header.js";
-                document.body.appendChild(headerScript);
+                function loadScript(src, onload) {
+                    const s = document.createElement("script");
+                    s.src = src; if (onload) s.onload = onload;
+                    document.body.appendChild(s);
+                }
+                loadScript("/js/cart.js", () => loadScript("/js/miniCart.js", () => loadScript("/js/header.js")));
             });
     </script>
     <div id="footer-container"></div>

@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --padding-top: clamp(5rem, 8vh, 7rem);
+    --padding-h: clamp(1rem, 2vw, 1.5rem);
+}
+
 body {
     background-color: #141414;
     color: #FFFCF8;
@@ -21,15 +26,16 @@ a svg {
 .detail-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px 60px 20px;
+    padding: var(--padding-top) var(--padding-h) clamp(2rem, 4vh, 3.75rem) var(--padding-h);
 }
 
 .breadcrumb {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    font-size: 14px;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    margin-bottom: clamp(1.5rem, 2.5vh, 2rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    flex-wrap: wrap;
 }
 
 .breadcrumb a {
@@ -54,10 +60,10 @@ a svg {
 .product-detail-card {
     background-color: #202024;
     border: 1px solid #323332;
-    border-radius: 16px;
+    border-radius: clamp(1rem, 1.5vw, 1.25rem);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: clamp(2rem, 3vw, 2.5rem);
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -67,14 +73,14 @@ a svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: clamp(1.5rem, 2.5vh, 2.5rem);
     border-right: 1px solid #323332;
 }
 
 .product-image-wrapper {
     width: 100%;
     aspect-ratio: 1;
-    max-width: 400px;
+    max-width: clamp(300px, 50vw, 400px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,31 +96,31 @@ a svg {
     height: 100%;
     object-fit: contain;
     display: block;
+    max-width: 100%;
 }
 
 .product-image-icon svg {
-    width: 180px;
-    height: 180px;
+    width: clamp(120px, 20vw, 180px);
+    height: auto;
     stroke: currentColor;
 }
 
-
 .product-info-section {
-    padding: 40px;
+    padding: clamp(1.5rem, 2.5vh, 2.5rem);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(1rem, 1.5vh, 1.5rem);
 }
 
 .product-category-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: clamp(0.35rem, 0.5vw, 0.5rem);
     background-color: #323332;
     color: #FFFCF8;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: clamp(0.35rem, 0.7vh, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
+    border-radius: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(0.7rem, 1.3vw, 0.85rem);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -123,7 +129,7 @@ a svg {
 
 .product-name {
     font-family: 'Poppins', sans-serif;
-    font-size: 32px;
+    font-size: clamp(1.75rem, 4vw, 2rem);
     font-weight: 700;
     color: #FFFCF8;
     line-height: 1.2;
@@ -131,7 +137,7 @@ a svg {
 }
 
 .product-price {
-    font-size: 36px;
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
     font-weight: 700;
     color: #FCBF07;
     font-family: 'Poppins', sans-serif;
@@ -140,22 +146,22 @@ a svg {
 .product-description-section,
 .product-features {
     background-color: #1a1a1e;
-    padding: 20px;
-    border-radius: 10px;
+    padding: clamp(1rem, 1.5vh, 1.5rem);
+    border-radius: clamp(0.65rem, 1vw, 0.75rem);
     border: 1px solid #323332;
 }
 
 .product-description-section h3,
 .product-features h3 {
-    font-size: 16px;
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
     font-weight: 600;
     color: #FFFCF8;
-    margin-bottom: 12px;
+    margin-bottom: clamp(0.75rem, 1.2vh, 0.85rem);
     font-family: 'Poppins', sans-serif;
 }
 
 .product-description-section p {
-    font-size: 15px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
     color: #FFFCF8;
     line-height: 1.6;
     opacity: 0.9;
@@ -168,14 +174,14 @@ a svg {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(0.5rem, 0.8vh, 0.65rem);
 }
 
 .product-features li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
+    gap: clamp(0.6rem, 1vw, 0.75rem);
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
     color: #FFFCF8;
     opacity: 0.9;
     font-family: 'Inter', sans-serif;
@@ -193,62 +199,52 @@ a svg {
 .product-actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 10px;
+    gap: clamp(0.75rem, 1.2vh, 1rem);
+    margin-top: clamp(0.5rem, 0.8vh, 0.75rem);
 }
 
 .add-to-cart-row {
-    margin-bottom: 22px;
+    margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: clamp(0.65rem, 1vh, 0.75rem);
 }
 
-/* Botão voltar menor */
 .add-to-cart-row .back-btn {
-    padding: 8px 14px;
-    font-size: 13px;
+    padding: clamp(0.5rem, 0.8vh, 0.65rem) clamp(1rem, 1.5vw, 1.25rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
-/* Garantir mesmo tamanho do "Comprar via WhatsApp" */
 .add-to-cart-row #add-to-cart-btn {
     width: fit-content;
-    padding: 16px 24px;
-    font-size: 16px;
+    padding: clamp(1rem, 1.5vh, 1.25rem) clamp(1.25rem, 2vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
 }
 
-/* evitar estilos do .buy-btn afetarem o layout do volta */
 .add-to-cart-row .buy-btn {
     width: fit-content;
 }
-
-
-@media (max-width: 600px) {
-    .add-to-cart-row {
-        margin-bottom: 16px;
-    }
-}
-
 
 .buy-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: clamp(0.6rem, 1vw, 0.75rem);
     background: linear-gradient(145deg, #FFD526, #FCBF07 48%, #E8A600);
     color: #141414;
     text-decoration: none;
     font-weight: 700;
-    padding: 16px 24px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: clamp(1rem, 1.5vh, 1.25rem) clamp(1.25rem, 2vw, 1.5rem);
+    border-radius: clamp(0.65rem, 1vw, 0.75rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     font-family: 'Poppins', sans-serif;
     transition: all 0.25s ease;
     box-shadow: 0 4px 16px rgba(252, 191, 7, 0.25);
+    border: none;
+    cursor: pointer;
 }
 
-/* WhatsApp: verde */
 #buy-button-bottom.buy-btn,
 #buy-button.buy-btn {
     background: linear-gradient(145deg, #23D366, #1FBF5B 48%, #0E8F3A);
@@ -263,27 +259,29 @@ a svg {
 }
 
 .buy-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(clamp(-2px, -0.3vh, -3px));
     box-shadow: 0 8px 24px rgba(252, 191, 7, 0.4);
     background: linear-gradient(145deg, #FFE047, #FFD526 48%, #FCBF07);
 }
 
 .buy-btn svg {
     stroke: currentColor;
+    width: clamp(1rem, 1.5vw, 1.25rem);
+    height: auto;
 }
 
 .back-btn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: clamp(0.6rem, 1vw, 0.75rem);
     background-color: transparent;
     color: #FFFCF8;
     text-decoration: none;
     font-weight: 500;
-    padding: 14px 24px;
-    border-radius: 10px;
-    font-size: 15px;
+    padding: clamp(0.85rem, 1.2vh, 1rem) clamp(1.25rem, 2vw, 1.5rem);
+    border-radius: clamp(0.65rem, 1vw, 0.75rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     border: 1px solid #323332;
     transition: all 0.2s ease;
     width: fit-content;
@@ -296,40 +294,42 @@ a svg {
 
 .back-btn svg {
     stroke: currentColor;
+    width: clamp(1rem, 1.5vw, 1.25rem);
+    height: auto;
 }
 
 .recommendations-section {
-    margin-top: 60px;
+    margin-top: clamp(3rem, 5vh, 4rem);
 }
 
 .recommendations-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: clamp(1.5rem, 2.5vh, 2rem);
 }
 
 .recommendations-header h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
     font-weight: 700;
     color: #FFFCF8;
-    margin: 0 0 8px 0;
+    margin: 0 0 clamp(0.5rem, 0.8vh, 0.75rem) 0;
 }
 
 .recommendations-header p {
-    font-size: 15px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
     color: #FFFCF8;
     opacity: 0.7;
 }
 
 .recommended-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 20vw, 240px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .recommended-card {
     background-color: #202024;
-    border-radius: 12px;
+    border-radius: clamp(0.75rem, 1.5vw, 1rem);
     border: 1px solid #323332;
     overflow: hidden;
     cursor: pointer;
@@ -339,7 +339,7 @@ a svg {
 }
 
 .recommended-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(clamp(-4px, -1vh, -6px));
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px #50514F;
     border-color: #50514F;
 }
@@ -361,36 +361,34 @@ a svg {
     height: 100%;
     object-fit: contain;
     display: block;
+    max-width: 100%;
 }
 
 .rec-card-image svg {
-
-    width: 56px;
-    height: 56px;
+    width: clamp(2.5rem, 5vw, 3.5rem);
+    height: auto;
     stroke: currentColor;
 }
 
-
-
-
 .rec-card-info {
-    padding: 18px;
+    padding: clamp(1rem, 1.5vw, 1.25rem);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(0.5rem, 1vh, 0.65rem);
 }
 
 .rec-card-name {
     margin: 0;
-    font-size: 16px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
     font-weight: 600;
     color: #FFFCF8;
     font-family: 'Poppins', sans-serif;
+    line-height: 1.3;
 }
 
 .rec-card-desc {
     margin: 0;
-    font-size: 13px;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     color: #FFFCF8;
     line-height: 1.4;
     opacity: 0.8;
@@ -398,11 +396,25 @@ a svg {
 }
 
 .rec-card-price {
-    margin-top: 6px;
-    font-size: 19px;
+    margin-top: clamp(0.35rem, 0.5vh, 0.5rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: bold;
     color: #FCBF07;
     font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .product-detail-card {
+        gap: clamp(1.5rem, 2.5vw, 2rem);
+    }
+
+    .product-image-wrapper {
+        max-width: clamp(250px, 45vw, 350px);
+    }
+
+    .product-image-icon svg {
+        width: clamp(100px, 18vw, 140px);
+    }
 }
 
 @media (max-width: 900px) {
@@ -413,83 +425,376 @@ a svg {
     .product-image-section {
         border-right: none;
         border-bottom: 1px solid #323332;
-        padding: 30px;
+        padding: clamp(1.5rem, 2.5vh, 2rem);
     }
 
     .product-image-icon svg {
-        width: 140px;
-        height: 140px;
+        width: clamp(100px, 18vw, 140px);
     }
 
     .product-info-section {
-        padding: 30px;
+        padding: clamp(1.5rem, 2.5vh, 2rem);
     }
 
     .product-name {
-        font-size: 26px;
+        font-size: clamp(1.5rem, 3.5vw, 1.75rem);
     }
 
     .product-price {
-        font-size: 30px;
+        font-size: clamp(1.5rem, 3vw, 1.95rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(auto-fill, minmax(clamp(160px, 16vw, 200px), 1fr));
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .detail-container {
-        padding: 80px 16px 40px 16px;
+        padding: var(--padding-top) clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 3vh, 2rem) clamp(0.75rem, 2vw, 1.25rem);
+    }
+
+    .product-detail-card {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 1.5vh, 1.5rem);
     }
 
     .product-name {
-        font-size: 22px;
+        font-size: clamp(1.35rem, 3vw, 1.5rem);
     }
 
     .product-price {
-        font-size: 26px;
+        font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 14vw, 180px), 1fr));
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    }
+}
+
+@media (max-width: 620px) {
+    .detail-container {
+        padding: clamp(4rem, 7vh, 5rem) clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vh, 2rem) clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .breadcrumb {
+        font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+        gap: clamp(0.35rem, 0.5vw, 0.5rem);
+    }
+
+    .product-name {
+        font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+    }
+
+    .product-price {
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     }
 
     .product-info-section {
-        padding: 24px;
-        gap: 16px;
+        padding: clamp(1.25rem, 2vh, 1.5rem);
+        gap: clamp(1rem, 1.5vh, 1.25rem);
     }
 
     .product-image-section {
-        padding: 24px;
+        padding: clamp(1.25rem, 2vh, 1.5rem);
     }
 
     .product-image-icon svg {
-        width: 100px;
-        height: 100px;
+        width: clamp(80px, 15vw, 100px);
     }
 
     .recommended-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
     }
 
     .rec-card-info {
-        padding: 14px;
+        padding: clamp(0.85rem, 1.2vw, 1rem);
     }
 
     .rec-card-name {
-        font-size: 14px;
+        font-size: clamp(0.85rem, 1.5vw, 0.95rem);
     }
 
     .rec-card-desc {
-        font-size: 12px;
+        font-size: clamp(0.75rem, 1.2vw, 0.8rem);
     }
 
     .rec-card-price {
-        font-size: 16px;
+        font-size: clamp(0.95rem, 1.8vw, 1.05rem);
     }
 
     .recommendations-header h2 {
-        font-size: 22px;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+    .detail-container {
+        padding: clamp(3.5rem, 6vh, 4.5rem) clamp(0.6rem, 1.2vw, 0.85rem) clamp(1.25rem, 2.5vh, 1.75rem) clamp(0.6rem, 1.2vw, 0.85rem);
+    }
+
+    .product-detail-card {
+        gap: clamp(0.75rem, 1.2vh, 1rem);
+    }
+
+    .product-name {
+        font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    }
+
+    .product-price {
+        font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    }
+
+    .card-info {
+        padding: clamp(0.8rem, 1.2vw, 1rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(0.6rem, 1vw, 0.85rem);
+    }
+
+    .rec-card-image svg {
+        width: clamp(2rem, 3.5vw, 2.5rem);
+    }
+
+    .add-to-cart-row {
+        gap: clamp(0.5rem, 0.8vh, 0.65rem);
+    }
+}
+
+@media (max-width: 430px) {
+    .detail-container {
+        padding: clamp(3.25rem, 5.5vh, 4rem) clamp(0.55rem, 1.1vw, 0.8rem) clamp(1.15rem, 2.3vh, 1.6rem) clamp(0.55rem, 1.1vw, 0.8rem);
+    }
+
+    .product-name {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .product-price {
+        font-size: clamp(1rem, 2vw, 1.45rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(0.55rem, 0.95vw, 0.8rem);
+    }
+
+    .rec-card-name {
+        font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+    }
+
+    .rec-card-price {
+        font-size: clamp(0.85rem, 1.6vw, 1rem);
+    }
+}
+
+@media (max-width: 412px) {
+    .product-name {
+        font-size: clamp(0.95rem, 1.9vw, 1.2rem);
+    }
+
+    .product-price {
+        font-size: clamp(0.95rem, 1.9vw, 1.4rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(1.5, 1fr);
+        gap: clamp(0.5rem, 0.9vw, 0.75rem);
+    }
+
+    .rec-card-name {
+        font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+    }
+
+    .rec-card-price {
+        font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    }
+}
+
+@media (max-width: 390px) {
+    .detail-container {
+        padding: clamp(3rem, 5vh, 3.75rem) clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vh, 1.5rem) clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .product-detail-card {
+        gap: clamp(0.7rem, 1.1vh, 0.95rem);
+    }
+
+    .product-name {
+        font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+    }
+
+    .product-price {
+        font-size: clamp(0.9rem, 1.8vw, 1.35rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(0.5rem, 0.85vw, 0.7rem);
+    }
+
+    .rec-card-name {
+        font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+    }
+
+    .rec-card-price {
+        font-size: clamp(0.78rem, 1.3vw, 0.9rem);
+    }
+
+    .rec-card-image svg {
+        width: clamp(1.8rem, 3vw, 2.2rem);
+    }
+
+    .product-description-section h3,
+    .product-features h3 {
+        font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+    }
+}
+
+@media (max-width: 375px) {
+    .detail-container {
+        padding: clamp(3rem, 5vh, 3.75rem) clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vh, 1.5rem) clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .product-image-wrapper {
+        max-width: clamp(200px, 80vw, 280px);
+    }
+
+    .product-image-icon svg {
+        width: clamp(60px, 12vw, 80px);
+    }
+
+    .product-name {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .product-price {
+        font-size: clamp(1rem, 2vw, 1.4rem);
+    }
+
+    .product-category-badge {
+        font-size: clamp(0.6rem, 1vw, 0.7rem);
+        padding: clamp(0.3rem, 0.5vh, 0.4rem) clamp(0.65rem, 1vw, 0.8rem);
+    }
+
+    .product-description-section h3,
+    .product-features h3 {
+        font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    }
+
+    .product-description-section p,
+    .product-features li {
+        font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+    }
+
     .recommended-grid {
         grid-template-columns: 1fr;
+        gap: clamp(0.5rem, 0.8vw, 0.75rem);
+    }
+
+    .buy-btn {
+        font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+        padding: clamp(0.85rem, 1.2vh, 1rem) clamp(1rem, 1.5vw, 1.25rem);
+    }
+
+    .back-btn {
+        font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+        padding: clamp(0.75rem, 1vh, 0.85rem) clamp(1rem, 1.5vw, 1.15rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .detail-container {
+        padding: clamp(2.8rem, 4.8vh, 3.5rem) clamp(0.45rem, 0.9vw, 0.7rem) clamp(1rem, 2vh, 1.4rem) clamp(0.45rem, 0.9vw, 0.7rem);
+    }
+
+    .product-image-wrapper {
+        max-width: clamp(180px, 75vw, 260px);
+    }
+
+    .product-image-icon svg {
+        width: clamp(55px, 11vw, 75px);
+    }
+
+    .product-name {
+        font-size: clamp(0.95rem, 1.9vw, 1.15rem);
+    }
+
+    .product-price {
+        font-size: clamp(0.95rem, 1.9vw, 1.35rem);
+    }
+
+    .recommended-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(0.45rem, 0.75vw, 0.65rem);
+    }
+
+    .rec-card-name {
+        font-size: clamp(0.65rem, 1vw, 0.8rem);
+    }
+
+    .rec-card-price {
+        font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+    }
+
+    .rec-card-image svg {
+        width: clamp(1.6rem, 2.8vw, 2rem);
+    }
+
+    .recommendations-header h2 {
+        font-size: clamp(1rem, 1.9vw, 1.25rem);
+    }
+}
+
+@media (max-width: 320px) {
+    .detail-container {
+        padding: clamp(2.75rem, 4.5vh, 3.5rem) clamp(0.4rem, 0.8vw, 0.6rem) clamp(1rem, 2vh, 1.25rem) clamp(0.4rem, 0.8vw, 0.6rem);
+    }
+
+    .breadcrumb {
+        font-size: clamp(0.65rem, 1vw, 0.75rem);
+        margin-bottom: clamp(1rem, 1.5vh, 1.25rem);
+    }
+
+    .product-detail-card {
+        border-radius: clamp(0.65rem, 1vw, 0.75rem);
+    }
+
+    .product-image-wrapper {
+        max-width: clamp(150px, 75vw, 200px);
+    }
+
+    .product-image-icon svg {
+        width: clamp(50px, 10vw, 65px);
+    }
+
+    .product-name {
+        font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    }
+
+    .product-price {
+        font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+    }
+
+    .product-category-badge {
+        font-size: clamp(0.55rem, 0.9vw, 0.65rem);
+        padding: clamp(0.25rem, 0.4vh, 0.35rem) clamp(0.55rem, 0.9vw, 0.7rem);
+    }
+
+    .product-info-section {
+        padding: clamp(1rem, 1.5vh, 1.25rem);
+    }
+
+    .rec-card-image svg {
+        width: clamp(1.75rem, 3vw, 2rem);
+    }
+
+    .recommendations-header h2 {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
     }
 }
 
