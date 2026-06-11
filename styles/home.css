@@ -160,7 +160,6 @@ svg {
 .main-container {
     position: relative;
     min-height: 100vh;
-    isolation: isolate;
     display: flex;
     align-items: flex-start;
     padding: clamp(108px, 15.2vh, 178px) clamp(24px, 7.05vw, 136px) clamp(100px, 14vh, 160px);
@@ -500,11 +499,6 @@ footer p {
         margin-bottom: 18px;
     }
 
-    .main-title {
-        font-size: clamp(4.8rem, 4.45vw, 5.4rem);
-        font-weight: 740;
-    }
-
     .main-title-bar {
         width: 54px;
         height: 4px;
@@ -599,6 +593,24 @@ footer p {
         padding-bottom: clamp(100px, 14vh, 160px);
     }
 
+    .main-content {
+        margin-top: 4rem;
+        width: min(700px, 100%);
+    }
+
+    .main-uptitle {
+        font-size: 0.94rem;
+        margin-bottom: 18px;
+    }
+
+    .main-title {
+        font-size: clamp(3rem, 4.45vw, 4.8rem);
+        font-weight: 740;
+        line-height: 1.02;
+        letter-spacing: 0;
+        text-shadow: 0 8px 34px rgba(0, 0, 0, 0.58);
+    }
+
     .section-experiences {
         margin-top: 0;
     }
@@ -691,17 +703,11 @@ footer p {
 
     .section-experiences {
         grid-template-columns: 1fr;
-        background: linear-gradient(180deg, #030303 0%, #0B0B0B 48%, #030303 100%);
-        grid-template-columns: minmax(0, 900px);
-        justify-content: center;
-        align-content: center;
-        padding:
-            clamp(48px, 8vh, 96px) clamp(24px, 7vw, 136px);
+        padding: clamp(48px, 8vh, 96px) clamp(24px, 7vw, 136px);
         gap: 24px;
     }
 
-    .section-card,
-    .section-card:first-child {
+    .section-card {
         padding: 22px 0;
     }
 
