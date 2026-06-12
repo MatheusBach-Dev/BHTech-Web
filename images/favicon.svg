@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <circle cx="250" cy="250" r="250" fill="#111111"/>
+  <circle cx="250" cy="250" r="242" fill="none" stroke="#FFB800" stroke-width="6"/>
+  <text x="250" y="240" font-family="'Arial Black', 'Arial', sans-serif" font-size="148" font-weight="900" fill="#FFB800" text-anchor="middle">BH</text>
+  <rect x="130" y="268" width="240" height="4" rx="2" fill="#FFB800"/>
+  <text x="250" y="330" font-family="'Arial', sans-serif" font-size="46" font-weight="700" fill="#FFB800" text-anchor="middle" letter-spacing="8">Tech</text>
+</svg>

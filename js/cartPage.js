@@ -899,7 +899,22 @@ function bindCartEvents() {
     cartElements.cartItems.addEventListener("error", handleCartImageError, true);
     cartElements.couponButton.addEventListener("click", applyCoupon);
     cartElements.couponInput.addEventListener("keydown", handleCouponKeydown);
-    cartElements.finishButton.addEventListener("click", finishOrder);
+    cartElements.finishButton.addEventListener("click", async function() {
+        const valid = await validateCheckout();
+        if (!valid) return;
+        const order = createOrderText();
+        setFinishButtonLoading(true);
+        setCheckoutStatus("Enviando pedido para a equipe BH Tech...", "");
+        try {
+            const emailResult = await sendOrderWithEmailJs(order);
+            saveLastOrder(order, { channel: "email", receiver: cartConfig.emailjs.receiverEmail, status: emailResult.status, text: emailResult.text });
+            setCheckoutStatus(`Pedido ${order.orderId} enviado para a BH Tech. A equipe fará a confirmação da retirada.`, "is-success");
+            setTimeout(() => cartElements.checkoutForm.submit(), 1800);
+        } catch (error) {
+            setCheckoutStatus(getEmailJsErrorMessage(error), "is-error");
+            setFinishButtonLoading(false);
+        }
+    });
     cartElements.phoneInput.addEventListener("blur", handlePhoneBlur);
     cartElements.phoneInput.addEventListener("change", handlePhoneBlur);
     cartElements.phoneInput.addEventListener("input", handlePhoneInput);

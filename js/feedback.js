@@ -36,8 +36,8 @@ if (feedbackForm && formStatus) {
         const email = String(formData.get("email") || "").trim();
         const service = String(formData.get("service") || "").trim();
         const message = String(formData.get("message") || "").trim();
-        const recommended = formData.get("recommend") ? "Recomendaria com certeza": "Não recomendaria";
-        const rating = Number(ratingValue.value)
+        const recommended = formData.get("recommend") ? "Recomendaria com certeza" : "Não recomendaria";
+        const rating = Number(ratingValue.value);
         const ratingStars = "★".repeat(rating) + "☆".repeat(5 - rating);
 
         formStatus.className = "form-status";
@@ -47,6 +47,7 @@ if (feedbackForm && formStatus) {
             formStatus.classList.add("is-error");
             return;
         }
+
         const data = {
             to_email: email,
             from_name: name,
@@ -56,13 +57,15 @@ if (feedbackForm && formStatus) {
             recommend: recommended,
             rating_stars: ratingStars
         };
+
         try {
             await emailjs.send("service_7f3g7px", "template_d5v69zu", data);
             formStatus.textContent = `Obrigado, ${name}. Seu feedback foi registrado para a equipe BH Tech.`;
-            feedbackForm.reset();
-            setRating(5);
-        } catch(error) {
+            formStatus.classList.add("is-success");
+            setTimeout(() => feedbackForm.submit(), 1800);
+        } catch (error) {
             formStatus.textContent = "Erro ao enviar. Tente novamente.";
+            formStatus.classList.add("is-error");
             console.error(error);
             setRating(5);
         }
