@@ -246,7 +246,7 @@ svg {
 }
 
 .main-button-go-to,
-.main-button-produtos {
+.main-button-whatsapp {
     min-height: 64px;
     display: inline-flex;
     align-items: center;
@@ -260,15 +260,11 @@ svg {
 }
 
 .main-button-go-to svg,
-.main-button-produtos svg {
+.main-button-whatsapp svg {
     width: 24px;
     height: 24px;
     flex: 0 0 auto;
-    stroke: currentColor;
-    stroke-width: 2.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
+    fill: currentColor;
 }
 
 .main-button-go-to {
@@ -281,7 +277,7 @@ svg {
         0 22px 48px rgba(252, 191, 7, 0.18);
 }
 
-.main-button-produtos {
+.main-button-whatsapp {
     min-width: 220px;
     padding: 0 26px;
     color: rgba(255, 252, 248, 0.9);
@@ -292,8 +288,8 @@ svg {
 
 .main-button-go-to:hover,
 .main-button-go-to:focus-visible,
-.main-button-produtos:hover,
-.main-button-produtos:focus-visible {
+.main-button-whatsapp:hover,
+.main-button-whatsapp:focus-visible {
     transform: translateY(-3px);
 }
 
@@ -304,8 +300,8 @@ svg {
         0 26px 60px rgba(252, 191, 7, 0.24);
 }
 
-.main-button-produtos:hover,
-.main-button-produtos:focus-visible {
+.main-button-whatsapp:hover,
+.main-button-whatsapp:focus-visible {
     border-color: rgba(252, 191, 7, 0.72);
     background: rgba(255, 255, 255, 0.08);
 }
@@ -624,7 +620,7 @@ footer p {
     }
 
     .main-button-go-to,
-    .main-button-produtos {
+    .main-button-whatsapp {
         min-height: 60px;
         font-size: 1rem;
     }
@@ -633,7 +629,7 @@ footer p {
         min-width: 278px;
     }
 
-    .main-button-produtos {
+    .main-button-whatsapp {
         min-width: 214px;
     }
 
@@ -954,7 +950,7 @@ footer p {
     }
 
     .main-button-go-to,
-    .main-button-produtos {
+    .main-button-whatsapp {
         width: 100%;
         min-width: 0;
         min-height: 58px;
@@ -965,7 +961,7 @@ footer p {
     }
 
     .main-button-go-to svg,
-    .main-button-produtos svg {
+    .main-button-whatsapp svg {
         width: 22px;
         height: 22px;
     }
@@ -1027,7 +1023,7 @@ footer p {
     }
 
     .main-button-go-to,
-    .main-button-produtos {
+    .main-button-whatsapp {
         justify-content: flex-start;
     }
 }

@@ -504,6 +504,7 @@ svg {
 .secondary-action {
     border-radius: 7px;
     cursor: pointer;
+    font-family: var(--fonte-padrao);
     font-weight: 850;
 }
 
