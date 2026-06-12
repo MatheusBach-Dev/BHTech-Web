@@ -264,6 +264,17 @@ svg {
     width: 24px;
     height: 24px;
     flex: 0 0 auto;
+}
+
+.main-button-go-to svg {
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.main-button-whatsapp svg {
     fill: currentColor;
 }
 
@@ -315,6 +326,14 @@ svg {
     width: 100vw;
     padding: 74px clamp(24px, 7.05vw, 136px) 74px;
     background: linear-gradient(180deg, #030303 0%, #0B0B0B 48%, #030303 100%);
+}
+
+.section-experiences-title {
+    grid-column: 1 / -1;
+    color: #fff;
+    font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+    font-weight: 700;
+    margin-bottom: 48px;
 }
 
 .section-card {

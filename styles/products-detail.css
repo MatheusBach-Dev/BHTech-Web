@@ -3,7 +3,7 @@
 }
 
 :root {
-    --padding-top: clamp(5rem, 8vh, 7rem);
+    --padding-top: clamp(7rem, 11vh, 9rem);
     --padding-h: clamp(1rem, 2vw, 1.5rem);
 }
 

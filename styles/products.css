@@ -17,13 +17,13 @@
     margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
 }
 .catalog-kicker-inter { 
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-secundaria);
     font-size: var(--texto-sm);
 }
 
 .catalog-title-poppins {
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--fonte-padrao);
     font-size: clamp(1.75rem, 4vw, 3.6rem);
     font-weight: 740;
     line-height: 1.05;
@@ -33,13 +33,13 @@
 .catalog-subtitle-inter {
     max-width: 680px;
     color: rgba(255, 252, 248, 0.72);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-secundaria);
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.65;
     padding-bottom: 10px;
 }
 
-h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+h1, h2, h3 { font-family: var(--fonte-padrao); }
 
 .products-controls{
     width: min(980px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
@@ -75,35 +75,7 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
     background: transparent;
     outline: none;
     color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(0.85rem, 2vw, 0.98rem);
-    border: none;
-}
-
-.products-controls .search-wrap{
-    width: 100%;
-    max-width: 760px;
-    display: flex;
-    align-items: center;
-    gap: clamp(0.5rem, 1vw, 0.75rem);
-    padding: clamp(0.65rem, 1.5vh, 0.85rem) clamp(0.75rem, 2vw, 1rem);
-    border-radius: clamp(0.75rem, 2vw, 1rem);
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.02);
-}
-
-.products-controls .search-icon{
-    color: rgba(255,252,248,0.65);
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    flex-shrink: 0;
-}
-
-.products-controls #products-search{
-    width: 100%;
-    background: transparent;
-    outline: none;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-secundaria);
     font-size: clamp(0.85rem, 2vw, 0.98rem);
     border: none;
 }
@@ -160,6 +132,12 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
     font-size: clamp(0.9rem, 1.8vw, 1rem);
     margin: 0 0 clamp(0.5rem, 1vh, 0.75rem) 0;
     font-weight: 600;
+    color: #FFFCF8;
+}
+
+.price-display{
+    color: #FFFCF8;
+    font-family: var(--fonte-padrao);
 }
 
 input[type=range] {
@@ -246,7 +224,7 @@ input[type=range] {
     font-size: clamp(0.9rem, 1.8vw, 1rem);
     font-weight: 600;
     color: #FFFCF8;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--fonte-padrao);
     line-height: 1.3;
 }
 
@@ -255,7 +233,7 @@ input[type=range] {
     font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     color: #FFFCF8;
     line-height: 1.4;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-secundaria);
     opacity: 0.8;
 }
 
@@ -264,7 +242,7 @@ input[type=range] {
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: bold;
     color: #FCBF07;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--fonte-padrao);
 }
 
 .empty-state {
