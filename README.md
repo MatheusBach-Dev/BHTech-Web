@@ -7,7 +7,7 @@ O objetivo é criar uma plataforma moderna, responsiva e funcional para apresent
 ## 🎯 Objetivos
 - Criar um site visualmente atraente  
 - Garantir responsividade (funcionar em celular, tablet e computador)  
-- Exibir produtos e serviços da BH Tech  
+- Exibir produtos e serviços da BH Celular  
 - Implementar interações com JavaScript  
 - Melhorar a experiência do usuário (UX)  
 
