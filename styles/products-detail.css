@@ -12,7 +12,7 @@ body {
     color: #FFFCF8;
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-padrao);
 }
 
 a {

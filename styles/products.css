@@ -107,6 +107,7 @@ h1, h2, h3 { font-family: var(--fonte-padrao); }
     cursor: pointer;
     text-align: left;
     font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-family: var(--fonte-padrao);
     transition: all 0.2s ease;
     font-weight: 500;
 }
@@ -152,6 +153,7 @@ input[type=range] {
     justify-content: space-between;
     font-size: clamp(0.8rem, 1.5vw, 0.95rem);
     color: #FFFCF8;
+    font-family: var(--fonte-padrao);
 }
 
 .product-content {
