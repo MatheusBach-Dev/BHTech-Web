@@ -22,5 +22,5 @@ O objetivo é criar uma plataforma moderna, responsiva e funcional para apresent
 - **Design Gráfico:** André Sette  
 - **Copywriter:** Pedro Borges  
 
-**Este projeto foi desenvolvido para fins acadêmicos como MVP e proposta de presença digital para a loja BH Tech.**
+**Este projeto foi desenvolvido para fins acadêmicos como MVP e proposta de presença digital para a loja BH Celular.**
 
